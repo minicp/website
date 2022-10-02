@@ -100,11 +100,10 @@ Who Uses MiniCP?
 
 If you use it for teaching or for research, please let us know and we will add you in this list.
 
-* UCLouvain, Belgium, `INGI2365 <https://uclouvain.be/cours-2022-LINGI2365>`_, teacher: Pierre Schaus.
+* UCLouvain, Belgium, `INGI2365 <https://uclouvain.be/en-cours-2022-linfo2365>`_, teacher: Pierre Schaus.
 * Uppsala, Sweden, `Master in CS <https://www.uu.se/en/admissions/master/selma/kursplan/?kKod=1DL442>`_, teachers: Pierre Flener.
 * ACP, `Summer School 2017 <https://school.a4cp.org/summer2017/>`_, Porquerolles, France, teacher: Pierre Schaus.
-* Université de Nice, France, `Master in CS <http://unice.fr/formation/formation-initiale/sminf1212>`_, teachers: Arnaud Malapert and Marie Pelleau.
-
+* ACP, `Summer School 2019 <https://school.a4cp.org/summer2019/>`_, Vienna, Austria, teacher: Pierre Schaus.
 
 
 Citing MiniCP
