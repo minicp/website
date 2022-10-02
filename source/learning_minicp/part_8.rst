@@ -23,8 +23,8 @@ Conflict-based Search Strategies
 
 Implement the Last Conflict [LC2009]_ and Conflict Ordering Search [COS2015]_ heuristics.
 
-Test your implementations in `LastConflictSearchTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/search/LastConflictSearchTest.java?at=master>`_
-and `ConflictOrderingSearchTest.java. <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/search/ConflictOrderingSearchTest.java?at=master>`_.
+Test your implementations in `LastConflictSearchTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/LastConflictSearchTest.java?at=master>`_
+and `ConflictOrderingSearchTest.java. <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/ConflictOrderingSearchTest.java?at=master>`_.
 
 .. [LC2009] Lecoutre, C., Saïs, L., Tabary, S., & Vidal, V. (2009). Reasoning from last conflict(s) in constraint programming. Artificial Intelligence, 173(18), 1592-1614. (`PDF <https://doi.org/10.1016/j.artint.2009.09.002>`_)
 
@@ -52,4 +52,4 @@ Limited Discrepancy Search (optional)
 Implement `LimitedDiscrepancyBranching`, a branching that can wrap any branching
 to limit the discrepancy of the branching.
 
-Test your implementation in `LimitedDiscrepancyBranchingTest.java. <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/search/LimitedDiscrepancyBranchingTest.java?at=master>`_.
+Test your implementation in `LimitedDiscrepancyBranchingTest.java. <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/LimitedDiscrepancyBranchingTest.java?at=master>`_.
