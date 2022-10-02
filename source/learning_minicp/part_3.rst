@@ -23,7 +23,7 @@ DFS Explicit Stack
 
 The search algorithm of MiniCP is *depth-first-search*.
 It is implemented using a recursive method in the class
-`DFSearch.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/search/DFSearch.java?at=master>`_.
+`DFSearch.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/search/DFSearch.java?at=master>`_.
 To avoid `stack-overflow` exceptions due to a too deep recursion in Java
 we ask you to reimplement the depth-first search with an explicit stack
 instead of relying on the recursion-call stack.
@@ -32,7 +32,6 @@ Consider the following search tree where branches to execute are represented as 
 
 
 .. image:: ../_static/dfs.svg
-    :scale: 50
     :width: 250
     :alt: DFS
     :align: center
@@ -102,7 +101,6 @@ The idea of this solution is wrap the save, restore, and branch executions insid
 as illustrated on the next figure showing the stack after the root node expansion at line 3.
 
 .. image:: ../_static/stackalternatives.svg
-    :scale: 50
     :width: 250
     :alt: DFS
     :align: center
@@ -122,7 +120,7 @@ Implement a Custom Search
 
 For the Quadratic Assignment Problem (see the slides on the Element
 constraint of :ref:`Part 4: Sum and Element Constraints`), modify the model `QAP.java
-<https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/QAP.java?at=master>`_,
+<https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/QAP.java?at=master>`_,
 where variable `x[i]` denotes the location of facility `i`,
 in order to implement a custom search strategy (and ignore the
 instructions on discrepancy search). A skeleton code for a custom search is as follows:
@@ -162,7 +160,6 @@ Furthermore, we may want to apply a specific heuristic on `x` that is different 
 
 
 .. image:: ../_static/combinator.svg
-    :scale: 50
     :width: 200
     :alt: combinator
     :align: center
@@ -176,7 +173,7 @@ This can be achieved as follows:
     makeDfs(and(firstFail(x),firstFail(y)))
 
 
-The `and` factory method creates a  `Sequencer.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/search/Sequencer.java?at=master>`_.
+The `and` factory method creates a  `Sequencer.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/search/Sequencer.java?at=master>`_.
 You must complete its implementation.
 
 Check on INGInious

@@ -28,7 +28,7 @@ MiniCP is small and well tested.
 Javadoc
 =======
 
-The `Javadoc API <https://minicp.bitbucket.io/apidocs/>`_.
+The `Javadoc API <https://minicp.github.io/minicp/>`_.
 
 
 .. _install:
@@ -41,7 +41,7 @@ Install MiniCP
     <iframe width="560" height="315" src="https://www.youtube.com/embed/VF_vkCnOp88?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
-MiniCP source code is available from bitbucket_.
+MiniCP source code is available from github_.
 
 **Using an IDE**
 
@@ -81,7 +81,7 @@ Some other useful commands:
     $mvn javadoc:javadoc        # creates javadoc in target/site/apidocs/index.html
 
 
-.. _bitbucket: https://bitbucket.org/minicp/minicp
+.. _github: https://github.com/minicp/minicp
 .. _IntelliJ: https://www.jetbrains.com/idea/
 .. _Eclipse: https://www.eclipse.org
 .. _maven: https://maven.apache.org
@@ -100,9 +100,11 @@ Who Uses MiniCP?
 
 If you use it for teaching or for research, please let us know and we will add you in this list.
 
-* UCLouvain, Belgium, `INGI2365 <https://uclouvain.be/cours-2017-LINGI2365>`_, teacher: Pierre Schaus.
+* UCLouvain, Belgium, `INGI2365 <https://uclouvain.be/cours-2022-LINGI2365>`_, teacher: Pierre Schaus.
+* Uppsala, Sweden, `Master in CS <https://www.uu.se/en/admissions/master/selma/kursplan/?kKod=1DL442>`_, teachers: Pierre Flener.
 * ACP, `Summer School 2017 <https://school.a4cp.org/summer2017/>`_, Porquerolles, France, teacher: Pierre Schaus.
 * Université de Nice, France, `Master in CS <http://unice.fr/formation/formation-initiale/sminf1212>`_, teachers: Arnaud Malapert and Marie Pelleau.
+
 
 
 Citing MiniCP

@@ -36,7 +36,7 @@ Bound-Impact Value Selector
 
 Implement the bound-impact value selector [BIVS2017]_ in order to discover good solutions quickly.
 
-Implement within `TSPBoundImpact.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/TSPBoundImpact.java?at=master>`_.
+Implement within `TSPBoundImpact.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/TSPBoundImpact.java?at=master>`_.
 Verify experimentally that the first solution found is smaller than with the default minimum-value heuristic.
 You can also use it in combination with your conflict ordering search.
 

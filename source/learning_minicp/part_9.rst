@@ -54,7 +54,6 @@ the capacity 4:
 
 
 .. image:: ../_static/scheduling.svg
-    :scale: 50
     :width: 400
     :alt: scheduling cumulative
     :align: center
@@ -67,7 +66,7 @@ It corresponds to the instantiation of the following `Cumulative` constraint:
 
 
 
-Implement `CumulativeDecomposition.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/CumulativeDecomposition.java?at=master>`_.
+Implement `CumulativeDecomposition.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/CumulativeDecomposition.java?at=master>`_.
 This is a decomposition or reformulation of the `Cumulative` constraint
 in terms of simple arithmetic and logical constraints as
 used in the equation above to describe its semantics.
@@ -141,7 +140,6 @@ The earliest point in time is 7:
 
 
 .. image:: ../_static/timetable2.svg
-    :scale: 50
     :width: 600
     :alt: scheduling timetable1
     :align: center
@@ -149,18 +147,17 @@ The earliest point in time is 7:
 **Profiles**
 
 
-We provide a class `Profile.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Profile.java?at=master>`_
+We provide a class `Profile.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master>`_
 that is able to efficiently build a resource profile given an array of rectangles as input.
 A rectangle has three attributes: `start`, `end`, and `height`, as shown next:
 
 .. image:: ../_static/rectangle.svg
-    :scale: 50
     :width: 250
     :alt: rectangle
     :align: center
 
 Indeed, a profile is nothing more than a sequence of rectangles.
-An example profile is given next. It is built from three input rectangles provided to the constructor of `Profile.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Profile.java?at=master>`_.
+An example profile is given next. It is built from three input rectangles provided to the constructor of `Profile.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master>`_.
 
 The profile consists of 7 contiguous rectangles.
 The first rectangle, `R0`, starts at `Integer.MIN_VALUE` with a height of zero,
@@ -170,13 +167,12 @@ that there exists a rectangle in the profile for any point in time:
 
 
 .. image:: ../_static/profile.svg
-    :scale: 50
     :width: 650
     :alt: profile
     :align: center
 
 Make sure you understand how to build and manipulate
-`Profile.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Profile.java?at=master>`_.
+`Profile.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master>`_.
 
 Have a look at `ProfileTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/ProfileTest.java?at=master>`_
 for some examples of profile construction.
@@ -186,7 +182,7 @@ for some examples of profile construction.
 
 
 
-Implement `Cumulative.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Cumulative.java?at=master>`_.
+Implement `Cumulative.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Cumulative.java?at=master>`_.
 You have three TODO tasks:
 
 1. Build the optimistic profile from the mandatory parts.
@@ -203,7 +199,6 @@ with a height equal to the resource requirement of the activity.
 Be careful because not every activity has a mandatory part:
 
 .. image:: ../_static/timetable1.svg
-    :scale: 50
     :width: 600
     :alt: scheduling timetable1
     :align: center
@@ -246,7 +241,7 @@ The Resource-Constrained Project Scheduling Problem (RCPSP)
 A set of activities must be executed on a set of resources.
 
 Your task is to terminate the implementation in
-`RCPSP.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/RCPSP.java?at=master>`_:
+`RCPSP.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/RCPSP.java?at=master>`_:
 
 * Post the Cumulative constraint
 * Post the precedence constraints
