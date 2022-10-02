@@ -81,12 +81,12 @@ our solutions can contact us.</em></p>
 <h2>DFS Explicit Stack<a class="headerlink" href="#dfs-explicit-stack" title="Permalink to this heading">¶</a></h2>
 <p>The search algorithm of MiniCP is <em>depth-first-search</em>.
 It is implemented using a recursive method in the class
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/search/DFSearch.java?at=master">DFSearch.java</a>.
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/search/DFSearch.java?at=master">DFSearch.java</a>.
 To avoid <cite>stack-overflow</cite> exceptions due to a too deep recursion in Java
 we ask you to reimplement the depth-first search with an explicit stack
 instead of relying on the recursion-call stack.</p>
 <p>Consider the following search tree where branches to execute are represented as letters:</p>
-<a class="reference internal image-reference" href="../_images/dfs.svg"><img alt="DFS" class="align-center" src="../_images/dfs.svg" width="125" /></a>
+<a class="reference internal image-reference" href="../_images/dfs.svg"><img alt="DFS" class="align-center" src="../_images/dfs.svg" width="250" /></a>
 <p>A DFS exploration should execute the above branches in the following sequence <cite>A, D, E, B, C, F, G</cite>.
 When backtracking, the previous state must be restored, requiring that the state is saved with the
 <cite>save</cite> operation before the branch is executed and restored with the <cite>restore</cite> operation when the branch terminates.
@@ -143,7 +143,7 @@ the skeleton code.</p>
 </div>
 <p>The idea of this solution is wrap the save, restore, and branch executions inside <cite>Alternative</cite> closure objects,
 as illustrated on the next figure showing the stack after the root node expansion at line 3.</p>
-<a class="reference internal image-reference" href="../_images/stackalternatives.svg"><img alt="DFS" class="align-center" height="230" src="../_images/stackalternatives.svg" width="125" /></a>
+<a class="reference internal image-reference" href="../_images/stackalternatives.svg"><img alt="DFS" class="align-center" src="../_images/stackalternatives.svg" width="250" /></a>
 <p>Check that your implementation passes the tests <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/search/DFSearchTest.java?at=master">DFSearchTest.java</a>.</p>
 <p>Remark (optional): It is possible to reduce the number of operations by skipping the save and restore
 operations for the for the last branch of any node (the branches B, C, E, and G in the
@@ -155,7 +155,7 @@ concludes.</p>
 <section id="implement-a-custom-search">
 <h2>Implement a Custom Search<a class="headerlink" href="#implement-a-custom-search" title="Permalink to this heading">¶</a></h2>
 <p>For the Quadratic Assignment Problem (see the slides on the Element
-constraint of <a class="reference internal" href="part_4.html#part-4-sum-and-element-constraints"><span class="std std-ref">Part 4: Sum and Element Constraints</span></a>), modify the model <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/QAP.java?at=master">QAP.java</a>,
+constraint of <a class="reference internal" href="part_4.html#part-4-sum-and-element-constraints"><span class="std std-ref">Part 4: Sum and Element Constraints</span></a>), modify the model <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/QAP.java?at=master">QAP.java</a>,
 where variable <cite>x[i]</cite> denotes the location of facility <cite>i</cite>,
 in order to implement a custom search strategy (and ignore the
 instructions on discrepancy search). A skeleton code for a custom search is as follows:</p>
@@ -188,14 +188,14 @@ instructions on discrepancy search). A skeleton code for a custom search is as f
 <p>Sometimes we wish to branch in a given order on two families of variables, say <cite>x[]</cite> and then <cite>y[]</cite>, as shown in the next picture.
 A variable in <cite>y</cite> should not be branched on before all the variables in <cite>x</cite> have been fixed.
 Furthermore, we may want to apply a specific heuristic on <cite>x</cite> that is different from the heuristic we want to apply on <cite>y</cite>:</p>
-<a class="reference internal image-reference" href="../_images/combinator.svg"><img alt="combinator" class="align-center" src="../_images/combinator.svg" width="100" /></a>
+<a class="reference internal image-reference" href="../_images/combinator.svg"><img alt="combinator" class="align-center" src="../_images/combinator.svg" width="200" /></a>
 <p>This can be achieved as follows:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">IntVar</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
 <span class="n">IntVar</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"></span>
 <span class="n">makeDfs</span><span class="p">(</span><span class="n">and</span><span class="p">(</span><span class="n">firstFail</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">firstFail</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The <cite>and</cite> factory method creates a  <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/search/Sequencer.java?at=master">Sequencer.java</a>.
+<p>The <cite>and</cite> factory method creates a  <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/search/Sequencer.java?at=master">Sequencer.java</a>.
 You must complete its implementation.</p>
 </section>
 <section id="check-on-inginious">
@@ -280,7 +280,7 @@ your code on INGInious to actually get your grade!</p>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Laurent Michel, Pierre Schaus, Pascal Van Hentenryck.
+        &#169; Copyright 2022, Laurent Michel, Pierre Schaus, Pascal Van Hentenryck.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.2.
     </div>
 <div class="footer">

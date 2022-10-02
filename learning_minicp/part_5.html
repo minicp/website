@@ -85,7 +85,7 @@ our solutions can contact us.</em></p>
 In the following example, the successor array <cite>a=[2,4,1,5,3,0]</cite> has
 for each index <cite>i</cite> (0 ≤ <cite>i</cite> ≤ 5) a directed edge that goes from
 node <cite>i</cite> to node <cite>a[i]</cite>:</p>
-<a class="reference internal image-reference" href="../_images/circuit.svg"><img alt="Circuit" class="align-center" src="../_images/circuit.svg" width="125" /></a>
+<a class="reference internal image-reference" href="../_images/circuit.svg"><img alt="Circuit" class="align-center" src="../_images/circuit.svg" width="250" /></a>
 <p>All the successors must be different.
 However, enforcing just an <cite>AllDifferent</cite> constraint is not enough as we
 must also guarantee that a proper Hamiltonian circuit
@@ -106,7 +106,7 @@ For your implementation, use the following arrays of stateful integers as the da
 <li><p><cite>lengthToDest[i]</cite> is the length of the partial path from node <cite>i</cite> to node <cite>dest[i]</cite> if node <cite>i</cite> is on a partial path; otherwise it is 0.</p></li>
 </ul>
 <p>Consider the following example where edges originating from fixed nodes are colored grey:</p>
-<a class="reference internal image-reference" href="../_images/circuit-subtour.svg"><img alt="Circuit" class="align-center" src="../_images/circuit-subtour.svg" width="125" /></a>
+<a class="reference internal image-reference" href="../_images/circuit-subtour.svg"><img alt="Circuit" class="align-center" src="../_images/circuit-subtour.svg" width="250" /></a>
 <p>Before node 5 has been fixed, the green edge has not yet been added,
 so we have:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
@@ -130,7 +130,7 @@ Since node 4 (the origin of a partial path) has a length to its destination (nod
 have the origin node 4 as a successor and the red edge is deleted.
 This filtering was introduced in <a class="reference internal" href="#tsp1998" id="id1"><span>[TSP1998]</span></a> for solving the traveling
 salesperson problem (TSP) with CP.</p>
-<p>Implement a propagator <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Circuit.java?at=master">Circuit.java</a>.
+<p>Implement a propagator <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Circuit.java?at=master">Circuit.java</a>.
 Check that your propagator passes the tests <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/CircuitTest.java?at=master">CircuitTest.java</a>.</p>
 <dl class="citation">
 <dt class="label" id="tsp1998"><span class="brackets"><a class="fn-backref" href="#id1">TSP1998</a></span></dt>
@@ -140,7 +140,7 @@ Check that your propagator passes the tests <a class="reference external" href="
 </section>
 <section id="custom-search-for-tsp">
 <h2>Custom Search for TSP<a class="headerlink" href="#custom-search-for-tsp" title="Permalink to this heading">¶</a></h2>
-<p>Modify <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/TSP.java?at=master">TSP.java</a>
+<p>Modify <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/TSP.java?at=master">TSP.java</a>
 in order to implement a custom search strategy.
 Use the following as skeleton code:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">DFSearch</span><span class="w"> </span><span class="n">dfs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">makeDfs</span><span class="p">(</span><span class="n">cp</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -183,14 +183,14 @@ by how much did you reduce the computation time and number of backtracks?</p>
 <section id="lns-applied-to-tsp">
 <h2>LNS Applied to TSP<a class="headerlink" href="#lns-applied-to-tsp" title="Permalink to this heading">¶</a></h2>
 <p>Implement and apply large-neighborhood search (LNS) by modifying
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/TSP.java?at=master">TSP.java</a>.</p>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/TSP.java?at=master">TSP.java</a>.</p>
 <p>What you should do:</p>
 <ul class="simple">
 <li><p>Record the current best solution. Hint: Use the <cite>onSolution</cite> call-back on the <cite>DFSearch</cite> object.</p></li>
 <li><p>Implement a restart strategy fixing randomly 10% of the variables to their value in the current best solution.</p></li>
 <li><p>Each restart has a failure limit of 100 backtracks.</p></li>
 </ul>
-<p>An example of LNS is given in  <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/QAPLNS.java?at=master">QAPLNS.java</a>.
+<p>An example of LNS is given in  <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/QAPLNS.java?at=master">QAPLNS.java</a>.
 You can simply copy/paste/modify this implementation for the TSP:</p>
 <ul class="simple">
 <li><p>Does it converge faster to good solutions than the standard DFSearch? Use the instance with 26 nodes.</p></li>
@@ -289,7 +289,7 @@ visited exactly once by exactly one of the <span class="math">k</span> vehicles:
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Laurent Michel, Pierre Schaus, Pascal Van Hentenryck.
+        &#169; Copyright 2022, Laurent Michel, Pierre Schaus, Pascal Van Hentenryck.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.2.
     </div>
 <div class="footer">

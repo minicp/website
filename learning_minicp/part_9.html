@@ -97,12 +97,12 @@ never exceeds the capacity:</p>
 </div><p>The following example depicts three activities and their corresponding
 requirement profile. As can be observed, the profile never exceeds
 the capacity 4:</p>
-<a class="reference internal image-reference" href="../_images/scheduling.svg"><img alt="scheduling cumulative" class="align-center" src="../_images/scheduling.svg" width="200" /></a>
+<a class="reference internal image-reference" href="../_images/scheduling.svg"><img alt="scheduling cumulative" class="align-center" src="../_images/scheduling.svg" width="400" /></a>
 <p>It corresponds to the instantiation of the following <cite>Cumulative</cite> constraint:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Cumulative</span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">requirement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">capa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Implement <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/CumulativeDecomposition.java?at=master">CumulativeDecomposition.java</a>.
+<p>Implement <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/CumulativeDecomposition.java?at=master">CumulativeDecomposition.java</a>.
 This is a decomposition or reformulation of the <cite>Cumulative</cite> constraint
 in terms of simple arithmetic and logical constraints as
 used in the equation above to describe its semantics.</p>
@@ -159,26 +159,26 @@ We thus need to postpone the activity until a point in time
 where it can execute over its entire duration
 without being in conflict with the profile and the capacity.
 The earliest point in time is 7:</p>
-<a class="reference internal image-reference" href="../_images/timetable2.svg"><img alt="scheduling timetable1" class="align-center" src="../_images/timetable2.svg" width="300" /></a>
+<a class="reference internal image-reference" href="../_images/timetable2.svg"><img alt="scheduling timetable1" class="align-center" src="../_images/timetable2.svg" width="600" /></a>
 <p><strong>Profiles</strong></p>
-<p>We provide a class <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Profile.java?at=master">Profile.java</a>
+<p>We provide a class <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master">Profile.java</a>
 that is able to efficiently build a resource profile given an array of rectangles as input.
 A rectangle has three attributes: <cite>start</cite>, <cite>end</cite>, and <cite>height</cite>, as shown next:</p>
-<a class="reference internal image-reference" href="../_images/rectangle.svg"><img alt="rectangle" class="align-center" src="../_images/rectangle.svg" width="125" /></a>
+<a class="reference internal image-reference" href="../_images/rectangle.svg"><img alt="rectangle" class="align-center" src="../_images/rectangle.svg" width="250" /></a>
 <p>Indeed, a profile is nothing more than a sequence of rectangles.
-An example profile is given next. It is built from three input rectangles provided to the constructor of <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Profile.java?at=master">Profile.java</a>.</p>
+An example profile is given next. It is built from three input rectangles provided to the constructor of <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master">Profile.java</a>.</p>
 <p>The profile consists of 7 contiguous rectangles.
 The first rectangle, <cite>R0</cite>, starts at <cite>Integer.MIN_VALUE</cite> with a height of zero,
 and the last rectangle, <cite>R6</cite>, ends at <cite>Integer.MAX_VALUE</cite>, also with a height of zero.
 These two dummy rectangles are convenient because they guarantee
 that there exists a rectangle in the profile for any point in time:</p>
-<a class="reference internal image-reference" href="../_images/profile.svg"><img alt="profile" class="align-center" src="../_images/profile.svg" width="325" /></a>
+<a class="reference internal image-reference" href="../_images/profile.svg"><img alt="profile" class="align-center" src="../_images/profile.svg" width="650" /></a>
 <p>Make sure you understand how to build and manipulate
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Profile.java?at=master">Profile.java</a>.</p>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master">Profile.java</a>.</p>
 <p>Have a look at <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/ProfileTest.java?at=master">ProfileTest.java</a>
 for some examples of profile construction.</p>
 <p><strong>Filtering</strong></p>
-<p>Implement <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Cumulative.java?at=master">Cumulative.java</a>.
+<p>Implement <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Cumulative.java?at=master">Cumulative.java</a>.
 You have three TODO tasks:</p>
 <ol class="arabic simple">
 <li><p>Build the optimistic profile from the mandatory parts.</p></li>
@@ -193,7 +193,7 @@ will be in its current domain.
 It is the rectangle starting at <cite>start[i].getMax()</cite> that ends in <cite>start[i].getMin()+duration[i]</cite>
 with a height equal to the resource requirement of the activity.
 Be careful because not every activity has a mandatory part:</p>
-<a class="reference internal image-reference" href="../_images/timetable1.svg"><img alt="scheduling timetable1" class="align-center" src="../_images/timetable1.svg" width="300" /></a>
+<a class="reference internal image-reference" href="../_images/timetable1.svg"><img alt="scheduling timetable1" class="align-center" src="../_images/timetable1.svg" width="600" /></a>
 <p><em>TODO 2</em> is to check that the profile is not exceeding the capacity.
 You can check that each rectangle of the profile is not exceeding the capacity;
 otherwise you throw an <cite>InconsistencyException</cite>.</p>
@@ -226,7 +226,7 @@ activity (if needed) to the earliest slot when it can be executed without exceed
 <h2>The Resource-Constrained Project Scheduling Problem (RCPSP)<a class="headerlink" href="#the-resource-constrained-project-scheduling-problem-rcpsp" title="Permalink to this heading">¶</a></h2>
 <p>A set of activities must be executed on a set of resources.</p>
 <p>Your task is to terminate the implementation in
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/RCPSP.java?at=master">RCPSP.java</a>:</p>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/RCPSP.java?at=master">RCPSP.java</a>:</p>
 <ul class="simple">
 <li><p>Post the Cumulative constraint</p></li>
 <li><p>Post the precedence constraints</p></li>
@@ -313,7 +313,7 @@ Do not expect to prove optimality for large-size instances, but you should reach
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Laurent Michel, Pierre Schaus, Pascal Van Hentenryck.
+        &#169; Copyright 2022, Laurent Michel, Pierre Schaus, Pascal Van Hentenryck.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.2.
     </div>
 <div class="footer">

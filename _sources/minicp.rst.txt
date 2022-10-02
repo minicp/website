@@ -80,12 +80,3 @@ The complete architecture of MiniCP is described in this `paper <_static/mini-cp
 
 
 
-
-MiniCP XCSP3 Mini Solver
-========================
-
-We provide under the form of a student project the possibility to participate to the XCSP3 MiniSolver Competition with MiniCP.
-All the interfacing with XCSP3 tools and the parsing of XCSP3 format is done for you.
-You can focus on the only interesting part: make your solver as efficient as possible.
-
-* `XCSP3 Website <http://xcsp3.org/competition>`_
