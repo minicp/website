@@ -10,7 +10,8 @@ Slides
 ======
 
 * `Lectures on Youtube <https://youtube.com/playlist?list=PLq6RpCDkJMypASwwjt0XfPW0j27guprFT>`_
-* `State Management: Copy and Trail, Search <https://www.icloud.com/keynote/0wmHrabdvZYKaDOBYv-wK09Wg#03-state-management-search>`_
+* `State Management <https://www.icloud.com/keynote/0cf8N6xHD-b3oQ6zRt8w538oQ#03-state-management-search>`_
+
 
 Theoretical Questions
 =====================
