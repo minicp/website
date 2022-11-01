@@ -23,20 +23,20 @@ Theoretical Questions
 Forward-Checking Filtering
 =========================================
 
-Implement a dedicated propagator `AllDifferentFWC.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/AllDifferentFWC.java?at=master>`_
+Implement a dedicated propagator `AllDifferentFWC.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/AllDifferentFWC.java>`_
 for the global AllDifferent constraint.
 Unlike `AllDifferentBinary.java
-<https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/AllDifferentBinary.java?at=master>`_,
+<https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/AllDifferentBinary.java>`_,
 it must not decompose the AllDifferent constraint by posting binary disequality
 constraints but instead do the following: when a variable becomes fixed, its value is removed from the domains of all the other variables.
 This achieves the same filtering as `AllDifferentBinary.java`,
 namely what is called forward-checking consistency.
 Avoid iteration over already fixed variables when removing a value:
 implement the sparse-set technique, as in `Sum.java
-<https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Sum.java?at=master>`_.
-Test your implementation in `AllDifferentFWCTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/AllDifferentFWCTest.java?at=master>`_.
+<https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Sum.java>`_.
+Test your implementation in `AllDifferentFWCTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/AllDifferentFWCTest.java>`_.
 Modify `NQueens.java
-<https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/NQueens.java?at=master>`_
+<https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/NQueens.java>`_
 by using `AllDifferentFWC.java` and experiment with the 15-queens instance:
 how much speed-up do you observe for finding all the solutions?
 
@@ -47,8 +47,8 @@ The objective is to implement the filtering algorithm described in [Regin94]_
 to remove every impossible value for the `AllDifferent` constraint (this is called generalized arc consistency and is also known as domain consistency).
 More precisely, you must:
 
-* Implement the constraint `AllDifferentDC.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/AllDifferentDC.java?at=master>`_.
-* Test your implementation in `AllDifferentDCTest.java. <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/AllDifferentDCTest.java?at=master>`_.
+* Implement the constraint `AllDifferentDC.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/AllDifferentDC.java>`_.
+* Test your implementation in `AllDifferentDCTest.java. <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/AllDifferentDCTest.java>`_.
 
 Régin's algorithm is a four-step procedure that can be described with the following figure:
 
@@ -73,10 +73,10 @@ The four steps are:
 
 The two main algorithmic building blocks are provided:
 
-* `MaximumMatching.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/MaximumMatching.java?at=master>`_
+* `MaximumMatching.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/MaximumMatching.java>`_
   is a class that computes a maximum matching given an array of variables. Instantiate this class once in the constructor
   of `AllDifferentDC` and then call `compute` in the `propagate` method.
-* `GraphUtil.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/util/GraphUtil.java?at=master>`_
+* `GraphUtil.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/util/GraphUtil.java>`_
   contains a static method with signature `public static int[] stronglyConnectedComponents(Graph graph)` to compute the strongly connected
   components. The returned array gives for each node its connected component id.
 

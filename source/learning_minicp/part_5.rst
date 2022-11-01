@@ -92,15 +92,15 @@ have the origin node 4 as a successor and the red edge is deleted.
 This filtering was introduced in [TSP1998]_ for solving the traveling
 salesperson problem (TSP) with CP.
 
-Implement a propagator `Circuit.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Circuit.java?at=master>`_.
-Check that your implementation passes the tests `CircuitTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/CircuitTest.java?at=master>`_.
+Implement a propagator `Circuit.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Circuit.java>`_.
+Check that your implementation passes the tests `CircuitTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CircuitTest.java>`_.
 
 .. [TSP1998] Pesant, G., Gendreau, M., Potvin, J. Y., & Rousseau, J. M. (1998). An exact constraint logic programming algorithm for the traveling salesman problem with time windows. Transportation Science, 32(1), 12-29.
 	     
 Custom Search for TSP
 =================================
 
-Modify `TSP.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/TSP.java?at=master>`_
+Modify `TSP.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/TSP.java>`_
 in order to implement a custom search strategy.
 Use the following as skeleton code:
 
@@ -144,14 +144,14 @@ is it better than upon naive first-fail?
 Also observe the time and number of backtracks necessary for proving optimality:
 by how much did you reduce the computation time and number of backtracks?
 
-Check that your implementation passes the tests `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java?at=master>`_.
+Check that your implementation passes the tests `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java>`_.
 
 
 LNS Applied to TSP
 =================================================================
 
 Implement and apply large-neighborhood search (LNS) by modifying
-`TSP.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/TSP.java?at=master>`_.
+`TSP.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/TSP.java>`_.
 
 What you should do:
 
@@ -159,7 +159,7 @@ What you should do:
 * Implement a restart strategy fixing randomly 10% of the variables to their value in the current best solution.
 * Each restart has a failure limit of 100 backtracks.
 
-An example of LNS is given in  `QAPLNS.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/QAPLNS.java?at=master>`_.
+An example of LNS is given in  `QAPLNS.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/QAPLNS.java>`_.
 You can simply copy/paste/modify this implementation for the TSP:
 
 * Does it converge faster to good solutions than the standard DFSearch? Use the instance with 26 nodes.
@@ -168,7 +168,7 @@ You can simply copy/paste/modify this implementation for the TSP:
 * Which parameter setting works best? How did you choose it?
 * Imagine a different relaxation specific to this problem.  Try and relax the variables that have the strongest impact on the objective with a greater probability (the choice of relaxed variables should still be somehow randomized).  You can for instance select a subset of cities with the largest distance to their successor and permit those cities to be reinserted anywhere in the circuit.  This requires keeping the relaxed cities (those that are to be reinserted) within the domains of the successor variables of the non-relaxed cities.
 
-Check that your implementation passes the tests `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java?at=master>`_.
+Check that your implementation passes the tests `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java>`_.
 
 
 From TSP to VRP

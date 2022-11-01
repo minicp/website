@@ -21,7 +21,7 @@ Theoretical Questions
 Domain with an Arbitrary Set of Values
 =================================================================================
 
-Implement the missing constructor in `IntVarImpl.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/core/IntVarImpl.java?at=master>`_:
+Implement the missing constructor in `IntVarImpl.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/core/IntVarImpl.java>`_:
 
 
 .. code-block:: java
@@ -32,7 +32,7 @@ Implement the missing constructor in `IntVarImpl.java <https://bitbucket.org/min
 
 This exercise is straightforward: just create a dense domain and then remove the values not present in the set.
 
-Check that your implementation passes the tests `IntVarTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/core/IntVarTest.java?at=master>`_.
+Check that your implementation passes the tests `IntVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java>`_.
 
 Implement a Domain Iterator
 ======================================
@@ -51,7 +51,7 @@ A naive (but correct) way of iterating over a domain is:
     }
 
 This method is rather inefficient because it will also consider the values that are not present in the domain.
-Instead, the `fillArray` method from `StateSparseSet.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/state/StateSparseSet.java?at=master>`_
+Instead, the `fillArray` method from `StateSparseSet.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/state/StateSparseSet.java>`_
 allows filling an array with all the values present in the sparse set.
 In case of an offset value of 0, you could even use the very efficient `System.arraycopy`.
 
@@ -66,28 +66,28 @@ safely iterate over this `dest` array and modify the domain at the same time.
 
 To do:
 
-* Improve the efficiency of `fillArray` from `StateSparseSet.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/state/StateSparseSet.java?at=master>`_ in order to use `System.arraycopy` when possible.
-* Implement `public int fillArray(int [] dest)` in `IntVarImpl.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/core/IntVarImpl.java?at=master>`_.
-* Check that your implementation passes the tests `IntVarTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/core/IntVarTest.java?at=master>`_ and `StateSparseSetTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/state/StateSparseSetTest.java?at=master>`_. Additionally, add more tests to `IntVarTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/core/IntVarTest.java?at=master>`_.
+* Improve the efficiency of `fillArray` from `StateSparseSet.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/state/StateSparseSet.java>`_ in order to use `System.arraycopy` when possible.
+* Implement `public int fillArray(int [] dest)` in `IntVarImpl.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/core/IntVarImpl.java>`_.
+* Check that your implementation passes the tests `IntVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java>`_ and `StateSparseSetTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/state/StateSparseSetTest.java>`_. Additionally, add more tests to `IntVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java>`_.
 
 The Absolute Value Constraint
 ==============================
 
-Implement `Absolute.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Absolute.java?at=master>`_.
+Implement `Absolute.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Absolute.java>`_.
 
 Several directions of implementation are possible:
 
 1. The full domain-consistent version (use the `fillArray` method to iterate over domains).
 2. A hybrid domain-bound consistent one.
 
-Check that your implementation passes the tests `AbsoluteTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/AbsoluteTest.java?at=master>`_.
+Check that your implementation passes the tests `AbsoluteTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/AbsoluteTest.java>`_.
 
 
 The Maximum Constraint
 ==============================
 
-Implement `Maximum.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Maximum.java?at=master>`_.
+Implement `Maximum.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Maximum.java>`_.
 
 Implement a bound-consistent filtering algorithm.
 
-Check that your implementation passes the tests `MaximumTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/MaximumTest.java?at=master>`_.
+Check that your implementation passes the tests `MaximumTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/MaximumTest.java>`_.

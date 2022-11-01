@@ -66,7 +66,7 @@ It corresponds to the instantiation of the following `Cumulative` constraint:
 
 
 
-Implement `CumulativeDecomposition.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/CumulativeDecomposition.java?at=master>`_.
+Implement `CumulativeDecomposition.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/CumulativeDecomposition.java>`_.
 This is a decomposition or reformulation of the `Cumulative` constraint
 in terms of simple arithmetic and logical constraints as
 used in the equation above to describe its semantics.
@@ -113,7 +113,7 @@ sure `overlaps` has the intended meaning:
         }
 
 
-Check that your implementation passes the tests `CumulativeDecompTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/CumulativeDecompTest.java?at=master>`_.
+Check that your implementation passes the tests `CumulativeDecompTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CumulativeDecompTest.java>`_.
 
 
 
@@ -147,7 +147,7 @@ The earliest point in time is 7:
 **Profiles**
 
 
-We provide a class `Profile.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master>`_
+We provide a class `Profile.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java>`_
 that is able to efficiently build a resource profile given an array of rectangles as input.
 A rectangle has three attributes: `start`, `end`, and `height`, as shown next:
 
@@ -157,7 +157,7 @@ A rectangle has three attributes: `start`, `end`, and `height`, as shown next:
     :align: center
 
 Indeed, a profile is nothing more than a sequence of rectangles.
-An example profile is given next. It is built from three input rectangles provided to the constructor of `Profile.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master>`_.
+An example profile is given next. It is built from three input rectangles provided to the constructor of `Profile.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java>`_.
 
 The profile consists of 7 contiguous rectangles.
 The first rectangle, `R0`, starts at `Integer.MIN_VALUE` with a height of zero,
@@ -172,9 +172,9 @@ that there exists a rectangle in the profile for any point in time:
     :align: center
 
 Make sure you understand how to build and manipulate
-`Profile.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master>`_.
+`Profile.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java>`_.
 
-Have a look at `ProfileTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/ProfileTest.java?at=master>`_
+Have a look at `ProfileTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/ProfileTest.java>`_
 for some examples of profile construction.
 
 
@@ -182,7 +182,7 @@ for some examples of profile construction.
 
 
 
-Implement `Cumulative.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Cumulative.java?at=master>`_.
+Implement `Cumulative.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Cumulative.java>`_.
 You have three TODO tasks:
 
 1. Build the optimistic profile from the mandatory parts.
@@ -229,7 +229,7 @@ activity (if needed) to the earliest slot when it can be executed without exceed
         }
 
 
-Check that your implementation passes the tests `CumulativeTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/CumulativeTest.java?at=master>`_.
+Check that your implementation passes the tests `CumulativeTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CumulativeTest.java>`_.
 
 
 .. [TT2015] Gay, S., Hartert, R., & Schaus, P. (2015). Simple and scalable time-table filtering for the cumulative constraint. International Conference on Principles and Practice of Constraint Programming, pp. 149-157. Springer. (`PDF <https://doi.org/10.1007/978-3-319-23219-5_11>`_)
@@ -241,7 +241,7 @@ The Resource-Constrained Project Scheduling Problem (RCPSP)
 A set of activities must be executed on a set of resources.
 
 Your task is to terminate the implementation in
-`RCPSP.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/RCPSP.java?at=master>`_:
+`RCPSP.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/RCPSP.java>`_:
 
 * Post the Cumulative constraint
 * Post the precedence constraints
@@ -252,4 +252,4 @@ Several instances of increasing size are available, with 30, 60, 90, and 120 act
 In order to test your model, note that the instance ``j30_1_1.rcp`` should have a minimum makespan of 43.
 Do not expect to prove optimality for large-size instances, but you should reach it easily for 30 activities.
 
-Check that your implementation passes the tests `RCPSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/RCPSPTest.java?at=master>`_.
+Check that your implementation passes the tests `RCPSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/RCPSPTest.java>`_.

@@ -43,24 +43,24 @@ but is violated for
     y = 3, z = 3
 
 Implement a propagator
-`Element1D.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Element1D.java?at=master>`_
+`Element1D.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Element1D.java>`_
 by following the ideas (also in the slides) for `Element2D`,
 which however do not lead to domain consistency for both variables.
 Check that your implementation passes the tests
-`Element1DTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/Element1DTest.java?at=master>`_.
+`Element1DTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/Element1DTest.java>`_.
 
 Also implement a propagator
-`Element1DDomainConsistent.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Element1DDomainConsistent.java?at=master>`_
+`Element1DDomainConsistent.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Element1DDomainConsistent.java>`_
 that achieves domain consistency for both variables.
 Check that your implementation passes the tests
-`Element1DDCTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/Element1DDCTest.java?at=master>`_.
+`Element1DDCTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/Element1DDCTest.java>`_.
 
 
 Element1DVar Constraint with an Array of Variables
 ==================================================
 
 Implement a propagator
-`Element1DVar.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Element1DVar.java?at=master>`_.
+`Element1DVar.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Element1DVar.java>`_.
 This constraint is more general than `Element1D` above,
 since `T` is here an array of variables.
 
@@ -75,7 +75,7 @@ Two directions of implementation are:
   achieves domain consistency for `y`, `z`, and all the `T[i]`.
 
 Check that your implementation passes the tests
-`Element1DVarTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/Element1DVarTest.java?at=master>`_.
+`Element1DVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/Element1DVarTest.java>`_.
 Those tests do not check that your propagator achieves domain
 consistency for all the variables, so you have to write additional tests
 in order to help convince yourself that it does so, if you take that direction.
@@ -84,8 +84,8 @@ in order to help convince yourself that it does so, if you take that direction.
 The Stable Matching Problem
 ===========================
 
-Complete the partial model `StableMatching.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/StableMatching.java?at=master>`_.
+Complete the partial model `StableMatching.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/StableMatching.java>`_.
 It makes use of the `Element1DVar` constraint you have just
 implemented and is also a good example of the manipulation of logical and reified constraints.
 Ensure that your implementation discovers all 6 solutions to the provided instance.
-Check that your implementation passes the tests `StableMatchingTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/StableMatchingTest.java?at=master>`_.
+Check that your implementation passes the tests `StableMatchingTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/StableMatchingTest.java>`_.

@@ -7,7 +7,7 @@ Make sure sphinx is installed, if not you can do
 
 ```
 python -m pip install --upgrade pip
-pip install -r requirements.txt                                              
+pip install -r requirements.txt
 ```
 
 To generate the website do

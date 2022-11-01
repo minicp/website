@@ -38,7 +38,7 @@ Forking MiniCP to Do the Programming Exercices
 Less-or-equal Reified Constraint
 ================================
 
-Implement `IsLessOrEqual.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsLessOrEqual.java?at=master>`_.
+Implement `IsLessOrEqual.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsLessOrEqual.java>`_.
 
 This is a propagator for the constraint `b iff x <= c`, which is called the `reified constraint` (or: `reification`) of the constraint `x <= c`: it holds if Boolean variable `b` is true if and only if variable `x` is less than or equal to value `c`.
 
@@ -57,6 +57,6 @@ but is violated for
     b = true , x = 5, c = 4
     b = false, x = 2, c = 4
 
-For an example of reification, you can look at `IsEqual.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsEqual.java?at=master>`_.
+For an example of reification, you can look at `IsEqual.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsEqual.java>`_.
 
-Check that your implementation passes the tests `IsLessOrEqualTest.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsEqualTest.java?at=master>`_.
+Check that your implementation passes the tests `IsLessOrEqualTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/IsEqualTest.java>`_.
