@@ -251,3 +251,5 @@ Your task is to terminate the implementation in
 Several instances of increasing size are available, with 30, 60, 90, and 120 activities.
 In order to test your model, note that the instance ``j30_1_1.rcp`` should have a minimum makespan of 43.
 Do not expect to prove optimality for large-size instances, but you should reach it easily for 30 activities.
+
+Check that your implementation passes the tests `RCPSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/RCPSPTest.java?at=master>`_.

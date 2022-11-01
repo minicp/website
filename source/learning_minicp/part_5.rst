@@ -93,7 +93,7 @@ This filtering was introduced in [TSP1998]_ for solving the traveling
 salesperson problem (TSP) with CP.
 
 Implement a propagator `Circuit.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Circuit.java?at=master>`_.
-Check that your propagator passes the tests `CircuitTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/CircuitTest.java?at=master>`_.
+Check that your implementation passes the tests `CircuitTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/CircuitTest.java?at=master>`_.
 
 .. [TSP1998] Pesant, G., Gendreau, M., Potvin, J. Y., & Rousseau, J. M. (1998). An exact constraint logic programming algorithm for the traveling salesman problem with time windows. Transportation Science, 32(1), 12-29.
 	     
@@ -144,6 +144,9 @@ is it better than upon naive first-fail?
 Also observe the time and number of backtracks necessary for proving optimality:
 by how much did you reduce the computation time and number of backtracks?
 
+Check that your implementation passes the tests `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java?at=master>`_.
+
+
 LNS Applied to TSP
 =================================================================
 
@@ -164,6 +167,9 @@ You can simply copy/paste/modify this implementation for the TSP:
 * What is the impact of the failure limit (experiment with 50, 100, and 1000)?
 * Which parameter setting works best? How did you choose it?
 * Imagine a different relaxation specific to this problem.  Try and relax the variables that have the strongest impact on the objective with a greater probability (the choice of relaxed variables should still be somehow randomized).  You can for instance select a subset of cities with the largest distance to their successor and permit those cities to be reinserted anywhere in the circuit.  This requires keeping the relaxed cities (those that are to be reinserted) within the domains of the successor variables of the non-relaxed cities.
+
+Check that your implementation passes the tests `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java?at=master>`_.
+
 
 From TSP to VRP
 =================================================================
