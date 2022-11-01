@@ -80,9 +80,9 @@ our solutions can contact us.</em></p>
 <section id="the-logical-clause-constraint-and-watched-literals">
 <h2>The Logical Clause Constraint and Watched Literals<a class="headerlink" href="#the-logical-clause-constraint-and-watched-literals" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>Implement the constraint <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Or.java?at=master">Or.java</a>
+<li><p>Implement the constraint <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Or.java">Or.java</a>
 for modeling the logical-clause constraint: <cite>(x[0] or x[1] or x[2] or … or x[n-1])</cite>.</p></li>
-<li><p>Test your implementation in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/OrTest.java?at=master">OrTest.java.</a>.</p></li>
+<li><p>Test your implementation in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/OrTest.java">OrTest.java.</a>.</p></li>
 <li><p>The implementation should use the watched-literals technique.</p></li>
 </ul>
 <p>A reminder about the watched-literals technique:</p>
@@ -110,16 +110,16 @@ consequently the two pointers must be updated.</p></li>
 <section id="the-reified-logical-clause-constraint">
 <h2>The Reified Logical-Clause Constraint<a class="headerlink" href="#the-reified-logical-clause-constraint" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>Implement the constraint <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsOr.java?at=master">IsOr.java</a>
+<li><p>Implement the constraint <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsOr.java">IsOr.java</a>
 for modeling the reified logical-clause constraint: <cite>b iff (x[0] or x[1] or x[2] or … or x[n-1])</cite>.</p></li>
-<li><p>Test your implementation in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/IsOrTest.java?at=master">IsOrTest.java.</a>.</p></li>
+<li><p>Test your implementation in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/IsOrTest.java">IsOrTest.java.</a>.</p></li>
 <li><p>In case <cite>b</cite> is true, you can post your previous <cite>Or</cite> constraint</p></li>
 </ul>
 <p>(create it once and for all and post it when needed to avoid creating objects during search that would trigger garbage collection).</p>
 </section>
 <section id="steel-mill-slab-problem-modeling-redundant-constraints-and-symmetry-breaking">
 <h2>Steel Mill Slab Problem: Modeling, Redundant Constraints, and Symmetry Breaking<a class="headerlink" href="#steel-mill-slab-problem-modeling-redundant-constraints-and-symmetry-breaking" title="Permalink to this heading">¶</a></h2>
-<p>A number of TODO tasks must be completed in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/Steel.java?at=master">Steel.java</a>
+<p>A number of TODO tasks must be completed in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/Steel.java">Steel.java</a>
 so as to improve gradually the performance for solving this problem optimally:</p>
 <ol class="arabic simple">
 <li><p>Model the objective function denoting the total loss to be minimized. You should use Element constraints to denote the loss

@@ -91,7 +91,7 @@ our solutions can contact us.</em></p>
 </section>
 <section id="less-or-equal-reified-constraint">
 <h2>Less-or-equal Reified Constraint<a class="headerlink" href="#less-or-equal-reified-constraint" title="Permalink to this heading">¶</a></h2>
-<p>Implement <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsLessOrEqual.java?at=master">IsLessOrEqual.java</a>.</p>
+<p>Implement <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsLessOrEqual.java">IsLessOrEqual.java</a>.</p>
 <p>This is a propagator for the constraint <cite>b iff x &lt;= c</cite>, which is called the <cite>reified constraint</cite> (or: <cite>reification</cite>) of the constraint <cite>x &lt;= c</cite>: it holds if Boolean variable <cite>b</cite> is true if and only if variable <cite>x</cite> is less than or equal to value <cite>c</cite>.</p>
 <p>For example, the constraint holds for</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
@@ -103,8 +103,8 @@ our solutions can contact us.</em></p>
 <span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
 </pre></div>
 </div>
-<p>For an example of reification, you can look at <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsEqual.java?at=master">IsEqual.java</a>.</p>
-<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsEqualTest.java?at=master">IsLessOrEqualTest.java</a>.</p>
+<p>For an example of reification, you can look at <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsEqual.java">IsEqual.java</a>.</p>
+<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/IsEqualTest.java">IsLessOrEqualTest.java</a>.</p>
 </section>
 </section>
 

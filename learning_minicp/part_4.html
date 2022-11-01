@@ -93,21 +93,21 @@ our solutions can contact us.</em></p>
 </pre></div>
 </div>
 <p>Implement a propagator
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Element1D.java?at=master">Element1D.java</a>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Element1D.java">Element1D.java</a>
 by following the ideas (also in the slides) for <cite>Element2D</cite>,
 which however do not lead to domain consistency for both variables.
 Check that your implementation passes the tests
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/Element1DTest.java?at=master">Element1DTest.java</a>.</p>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/Element1DTest.java">Element1DTest.java</a>.</p>
 <p>Also implement a propagator
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Element1DDomainConsistent.java?at=master">Element1DDomainConsistent.java</a>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Element1DDomainConsistent.java">Element1DDomainConsistent.java</a>
 that achieves domain consistency for both variables.
 Check that your implementation passes the tests
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/Element1DDCTest.java?at=master">Element1DDCTest.java</a>.</p>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/Element1DDCTest.java">Element1DDCTest.java</a>.</p>
 </section>
 <section id="element1dvar-constraint-with-an-array-of-variables">
 <h2>Element1DVar Constraint with an Array of Variables<a class="headerlink" href="#element1dvar-constraint-with-an-array-of-variables" title="Permalink to this heading">¶</a></h2>
 <p>Implement a propagator
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Element1DVar.java?at=master">Element1DVar.java</a>.
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Element1DVar.java">Element1DVar.java</a>.
 This constraint is more general than <cite>Element1D</cite> above,
 since <cite>T</cite> is here an array of variables.</p>
 <p>The filtering algorithm is nontrivial,
@@ -121,18 +121,18 @@ but domain consistency for <cite>y</cite>.</p></li>
 achieves domain consistency for <cite>y</cite>, <cite>z</cite>, and all the <cite>T[i]</cite>.</p></li>
 </ul>
 <p>Check that your implementation passes the tests
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/Element1DVarTest.java?at=master">Element1DVarTest.java</a>.
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/Element1DVarTest.java">Element1DVarTest.java</a>.
 Those tests do not check that your propagator achieves domain
 consistency for all the variables, so you have to write additional tests
 in order to help convince yourself that it does so, if you take that direction.</p>
 </section>
 <section id="the-stable-matching-problem">
 <h2>The Stable Matching Problem<a class="headerlink" href="#the-stable-matching-problem" title="Permalink to this heading">¶</a></h2>
-<p>Complete the partial model <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/StableMatching.java?at=master">StableMatching.java</a>.
+<p>Complete the partial model <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/StableMatching.java">StableMatching.java</a>.
 It makes use of the <cite>Element1DVar</cite> constraint you have just
 implemented and is also a good example of the manipulation of logical and reified constraints.
 Ensure that your implementation discovers all 6 solutions to the provided instance.
-Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/StableMatchingTest.java?at=master">StableMatchingTest.java</a>.</p>
+Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/StableMatchingTest.java">StableMatchingTest.java</a>.</p>
 </section>
 </section>
 

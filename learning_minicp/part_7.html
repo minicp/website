@@ -142,7 +142,7 @@ domain of the variable <cite>X[j]</cite> contains the value <cite>T[i][j]</cite>
 used by any supported tuple.</p></li>
 </ol>
 <p>Your task is to finish the implementation in
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/TableCT.java?at=master">TableCT.java</a>.</p>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/TableCT.java">TableCT.java</a>.</p>
 <p><cite>TableCT</cite> maintains for each variable-value pair an array of bitsets:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="n">BitSet</span><span class="o">[][]</span><span class="w"> </span><span class="n">supports</span><span class="p">;</span><span class="w"></span>
 </pre></div>
@@ -196,7 +196,7 @@ variable.</p></li>
 <li><p>You can now intersect the set of globally supported tuples with each variable-value pair in <cite>supports</cite>.
 If the value supports no tuples (i.e., if the intersection is empty), then the value can be removed.</p></li>
 </ul>
-<p>Check that your implementation passes the tests <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/TableTest.java?at=master">TableTest.java</a>.</p>
+<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/TableTest.java">TableTest.java</a>.</p>
 <dl class="citation">
 <dt class="label" id="ct2016"><span class="brackets"><a class="fn-backref" href="#id1">CT2016</a></span></dt>
 <dd><p>Demeulenaere, J., Hartert, R., Lecoutre, C., Perez, G., Perron, L., Régin, J.-C., &amp; Schaus, P. (2016). Compact-table: Efficiently filtering table constraints with reversible sparse bit-sets. International Conference on Principles and Practice of Constraint Programming, pp. 207-223. Springer. (<a class="reference external" href="https://doi.org/10.1007/978-3-319-44953-1_14">PDF</a>)</p>
@@ -208,13 +208,13 @@ If the value supports no tuples (i.e., if the intersection is empty), then the v
 <h2>Eternity Problem<a class="headerlink" href="#eternity-problem" title="Permalink to this heading">¶</a></h2>
 <p>Fill in all the gaps in order to solve the Eternity II problem.</p>
 <p>Your task is to finish the implementation in
-<a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/Eternity.java?at=master">Eternity.java</a>:</p>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/Eternity.java">Eternity.java</a>:</p>
 <ul class="simple">
 <li><p>Create the table.</p></li>
 <li><p>Model the problem using Table constraints.</p></li>
 <li><p>Search for a feasible solution using branching combinators.</p></li>
 </ul>
-<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/EternityTest.java?at=master">EternityTest.java</a>.</p>
+<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/EternityTest.java">EternityTest.java</a>.</p>
 </section>
 </section>
 

@@ -102,7 +102,7 @@ the capacity 4:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Cumulative</span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">requirement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">capa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Implement <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/CumulativeDecomposition.java?at=master">CumulativeDecomposition.java</a>.
+<p>Implement <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/CumulativeDecomposition.java">CumulativeDecomposition.java</a>.
 This is a decomposition or reformulation of the <cite>Cumulative</cite> constraint
 in terms of simple arithmetic and logical constraints as
 used in the equation above to describe its semantics.</p>
@@ -140,7 +140,7 @@ sure <cite>overlaps</cite> has the intended meaning:</p>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Check that your implementation passes the tests <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/CumulativeDecompTest.java?at=master">CumulativeDecompTest.java</a>.</p>
+<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CumulativeDecompTest.java">CumulativeDecompTest.java</a>.</p>
 </section>
 <section id="cumulative-constraint-time-table-filtering">
 <h2>Cumulative Constraint: Time-Table Filtering<a class="headerlink" href="#cumulative-constraint-time-table-filtering" title="Permalink to this heading">¶</a></h2>
@@ -161,12 +161,12 @@ without being in conflict with the profile and the capacity.
 The earliest point in time is 7:</p>
 <a class="reference internal image-reference" href="../_images/timetable2.svg"><img alt="scheduling timetable1" class="align-center" src="../_images/timetable2.svg" width="600" /></a>
 <p><strong>Profiles</strong></p>
-<p>We provide a class <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master">Profile.java</a>
+<p>We provide a class <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java">Profile.java</a>
 that is able to efficiently build a resource profile given an array of rectangles as input.
 A rectangle has three attributes: <cite>start</cite>, <cite>end</cite>, and <cite>height</cite>, as shown next:</p>
 <a class="reference internal image-reference" href="../_images/rectangle.svg"><img alt="rectangle" class="align-center" src="../_images/rectangle.svg" width="250" /></a>
 <p>Indeed, a profile is nothing more than a sequence of rectangles.
-An example profile is given next. It is built from three input rectangles provided to the constructor of <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master">Profile.java</a>.</p>
+An example profile is given next. It is built from three input rectangles provided to the constructor of <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java">Profile.java</a>.</p>
 <p>The profile consists of 7 contiguous rectangles.
 The first rectangle, <cite>R0</cite>, starts at <cite>Integer.MIN_VALUE</cite> with a height of zero,
 and the last rectangle, <cite>R6</cite>, ends at <cite>Integer.MAX_VALUE</cite>, also with a height of zero.
@@ -174,11 +174,11 @@ These two dummy rectangles are convenient because they guarantee
 that there exists a rectangle in the profile for any point in time:</p>
 <a class="reference internal image-reference" href="../_images/profile.svg"><img alt="profile" class="align-center" src="../_images/profile.svg" width="650" /></a>
 <p>Make sure you understand how to build and manipulate
-<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java?at=master">Profile.java</a>.</p>
-<p>Have a look at <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/ProfileTest.java?at=master">ProfileTest.java</a>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Profile.java">Profile.java</a>.</p>
+<p>Have a look at <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/ProfileTest.java">ProfileTest.java</a>
 for some examples of profile construction.</p>
 <p><strong>Filtering</strong></p>
-<p>Implement <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Cumulative.java?at=master">Cumulative.java</a>.
+<p>Implement <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Cumulative.java">Cumulative.java</a>.
 You have three TODO tasks:</p>
 <ol class="arabic simple">
 <li><p>Build the optimistic profile from the mandatory parts.</p></li>
@@ -215,7 +215,7 @@ activity (if needed) to the earliest slot when it can be executed without exceed
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Check that your implementation passes the tests <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/CumulativeTest.java?at=master">CumulativeTest.java</a>.</p>
+<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CumulativeTest.java">CumulativeTest.java</a>.</p>
 <dl class="citation">
 <dt class="label" id="tt2015"><span class="brackets"><a class="fn-backref" href="#id2">TT2015</a></span></dt>
 <dd><p>Gay, S., Hartert, R., &amp; Schaus, P. (2015). Simple and scalable time-table filtering for the cumulative constraint. International Conference on Principles and Practice of Constraint Programming, pp. 149-157. Springer. (<a class="reference external" href="https://doi.org/10.1007/978-3-319-23219-5_11">PDF</a>)</p>
@@ -226,7 +226,7 @@ activity (if needed) to the earliest slot when it can be executed without exceed
 <h2>The Resource-Constrained Project Scheduling Problem (RCPSP)<a class="headerlink" href="#the-resource-constrained-project-scheduling-problem-rcpsp" title="Permalink to this heading">¶</a></h2>
 <p>A set of activities must be executed on a set of resources.</p>
 <p>Your task is to terminate the implementation in
-<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/RCPSP.java?at=master">RCPSP.java</a>:</p>
+<a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/RCPSP.java">RCPSP.java</a>:</p>
 <ul class="simple">
 <li><p>Post the Cumulative constraint</p></li>
 <li><p>Post the precedence constraints</p></li>
@@ -236,7 +236,7 @@ activity (if needed) to the earliest slot when it can be executed without exceed
 <p>Several instances of increasing size are available, with 30, 60, 90, and 120 activities.
 In order to test your model, note that the instance <code class="docutils literal notranslate"><span class="pre">j30_1_1.rcp</span></code> should have a minimum makespan of 43.
 Do not expect to prove optimality for large-size instances, but you should reach it easily for 30 activities.</p>
-<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/RCPSPTest.java?at=master">RCPSPTest.java</a>.</p>
+<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/RCPSPTest.java">RCPSPTest.java</a>.</p>
 </section>
 </section>
 

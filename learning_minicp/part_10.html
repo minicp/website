@@ -82,31 +82,31 @@ our solutions can contact us.</em></p>
 <h2>Decomposing the Disjunctive Constraint<a class="headerlink" href="#decomposing-the-disjunctive-constraint" title="Permalink to this heading">¶</a></h2>
 <p>Your task is to make the Disjunctive constraint more efficient than by using the Cumulative constraint with unit capacity:</p>
 <ul class="simple">
-<li><p>Implement the constraint <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/IsLessOrEqualVar.java?at=master">IsLessOrEqualVar.java</a>
+<li><p>Implement the constraint <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsLessOrEqualVar.java">IsLessOrEqualVar.java</a>
 for the reification <cite>b iff x &lt;= y</cite>, where <cite>b</cite>, <cite>x</cite>, and <cite>y</cite> are variables.
 This will be useful for implementing the decomposition of the Disjunctive constraint.</p></li>
-<li><p>Test your implementation in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/IsLessOrEqualVarTest.java?at=master">IsLessOrEqualVarTest.java.</a>.</p></li>
-<li><p>Implement the decomposition with reified constraints for <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Disjunctive.java?at=master">Disjunctive.java.</a>.</p></li>
-<li><p>Make sure your implementation passes all the tests <em>except</em> <cite>testOverloadChecker</cite>, <cite>testDetectablePrecedence</cite>, and <cite>testNotLast</cite> (those are for the programming exercise below) in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/DisjunctiveTest.java?at=master">DisjunctiveTest.java</a>.</p></li>
+<li><p>Test your implementation in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/IsLessOrEqualVarTest.java">IsLessOrEqualVarTest.java.</a>.</p></li>
+<li><p>Implement the decomposition with reified constraints for <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Disjunctive.java">Disjunctive.java.</a>.</p></li>
+<li><p>Make sure your implementation passes all the tests <em>except</em> <cite>testOverloadChecker</cite>, <cite>testDetectablePrecedence</cite>, and <cite>testNotLast</cite> (those are for the programming exercise below) in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/DisjunctiveTest.java">DisjunctiveTest.java</a>.</p></li>
 <li><p>Test whether, as expected, this decomposition prunes more than the formulation with timetable filtering for the Cumulative constraint.
-For example, observe on <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/JobShop.java?at=master">JobShop.java</a> that the number of backtracks is reduced with the decomposition compared to the formulation with Cumulative.
+For example, observe on <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/JobShop.java">JobShop.java</a> that the number of backtracks is reduced with the decomposition compared to the formulation with Cumulative.
 Test for instance on the small instance <cite>data/jobshop/sascha/jobshop-4-4-2</cite> with 4 jobs, 4 machines, and 16 activities.</p></li>
 </ul>
 </section>
 <section id="the-global-disjunctive-constraint-overload-checker-detectable-precedence-and-not-first-not-last">
 <h2>The Global Disjunctive Constraint: Overload Checker, Detectable Precedence, and Not-First-Not-Last<a class="headerlink" href="#the-global-disjunctive-constraint-overload-checker-detectable-precedence-and-not-first-not-last" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>Read and make sure you understand the implementation <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/ThetaTree.java?at=master">ThetaTree.java.</a>.
-Some unit tests are implemented in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/ThetaTreeTest.java?at=master">ThetaTreeTest.java.</a>.
+<li><p>Read and make sure you understand the implementation <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/ThetaTree.java">ThetaTree.java.</a>.
+Some unit tests are implemented in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/ThetaTreeTest.java">ThetaTreeTest.java.</a>.
 To make sure you understand it, add a unit test with 4 activities and compare the results with a manual computation.</p></li>
 <li><p>Overload checking, detectable precedences, not-first-not-last, and edge finding only filter one side of the activities.
-To get the symmetrical filtering, implement the mirroring activities trick similarly to <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Cumulative.java?at=master">Cumulative.java</a>.</p></li>
-<li><p>Implement the overload checker in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Disjunctive.java?at=master">Disjunctive.java</a>.</p></li>
+To get the symmetrical filtering, implement the mirroring activities trick similarly to <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Cumulative.java">Cumulative.java</a>.</p></li>
+<li><p>Implement the overload checker in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Disjunctive.java">Disjunctive.java</a>.</p></li>
 <li><p>The overload checker should already make a big difference to prune the search tree.  Make sure that larger job-shop instances are now solved faster; for instance, <cite>data/jobshop/sascha/jobshop-6-6-0</cite> should now become easy to solve.</p></li>
-<li><p>Implement detectable precedences in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Disjunctive.java?at=master">Disjunctive.java</a>.</p></li>
-<li><p>Implement not-first-not-last in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Disjunctive.java?at=master">Disjunctive.java</a>.</p></li>
-<li><p>Make sure your implementation passes the tests <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/DisjunctiveTest.java?at=master">DisjunctiveTest.java</a>.</p></li>
-<li><p>(optional) Implement edge finding in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Disjunctive.java?at=master">Disjunctive.java</a> (you will also need to implement the ThetaLambdaTree data structure).</p></li>
+<li><p>Implement detectable precedences in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Disjunctive.java">Disjunctive.java</a>.</p></li>
+<li><p>Implement not-first-not-last in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Disjunctive.java">Disjunctive.java</a>.</p></li>
+<li><p>Make sure your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/DisjunctiveTest.java">DisjunctiveTest.java</a>.</p></li>
+<li><p>(optional) Implement edge finding in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Disjunctive.java">Disjunctive.java</a> (you will also need to implement the ThetaLambdaTree data structure).</p></li>
 </ul>
 </section>
 </section>

@@ -79,14 +79,14 @@ our solutions can contact us.</em></p>
 </section>
 <section id="domain-with-an-arbitrary-set-of-values">
 <h2>Domain with an Arbitrary Set of Values<a class="headerlink" href="#domain-with-an-arbitrary-set-of-values" title="Permalink to this heading">¶</a></h2>
-<p>Implement the missing constructor in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/core/IntVarImpl.java?at=master">IntVarImpl.java</a>:</p>
+<p>Implement the missing constructor in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/core/IntVarImpl.java">IntVarImpl.java</a>:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="nf">IntVarImpl</span><span class="p">(</span><span class="n">Solver</span><span class="w"> </span><span class="n">cp</span><span class="p">,</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NotImplementedException</span><span class="p">();</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This exercise is straightforward: just create a dense domain and then remove the values not present in the set.</p>
-<p>Check that your implementation passes the tests <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/core/IntVarTest.java?at=master">IntVarTest.java</a>.</p>
+<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java">IntVarTest.java</a>.</p>
 </section>
 <section id="implement-a-domain-iterator">
 <h2>Implement a Domain Iterator<a class="headerlink" href="#implement-a-domain-iterator" title="Permalink to this heading">¶</a></h2>
@@ -100,7 +100,7 @@ our solutions can contact us.</em></p>
 </pre></div>
 </div>
 <p>This method is rather inefficient because it will also consider the values that are not present in the domain.
-Instead, the <cite>fillArray</cite> method from <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/state/StateSparseSet.java?at=master">StateSparseSet.java</a>
+Instead, the <cite>fillArray</cite> method from <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/state/StateSparseSet.java">StateSparseSet.java</a>
 allows filling an array with all the values present in the sparse set.
 In case of an offset value of 0, you could even use the very efficient <cite>System.arraycopy</cite>.</p>
 <p>The main advantage over the iterator mechanism is that no object is created (and thus garbage collected).
@@ -113,26 +113,26 @@ The answer here is very clear: you get a snapshot of the domain at the time of t
 safely iterate over this <cite>dest</cite> array and modify the domain at the same time.</p>
 <p>To do:</p>
 <ul class="simple">
-<li><p>Improve the efficiency of <cite>fillArray</cite> from <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/state/StateSparseSet.java?at=master">StateSparseSet.java</a> in order to use <cite>System.arraycopy</cite> when possible.</p></li>
-<li><p>Implement <cite>public int fillArray(int [] dest)</cite> in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/core/IntVarImpl.java?at=master">IntVarImpl.java</a>.</p></li>
-<li><p>Check that your implementation passes the tests <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/core/IntVarTest.java?at=master">IntVarTest.java</a> and <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/state/StateSparseSetTest.java?at=master">StateSparseSetTest.java</a>. Additionally, add more tests to <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/core/IntVarTest.java?at=master">IntVarTest.java</a>.</p></li>
+<li><p>Improve the efficiency of <cite>fillArray</cite> from <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/state/StateSparseSet.java">StateSparseSet.java</a> in order to use <cite>System.arraycopy</cite> when possible.</p></li>
+<li><p>Implement <cite>public int fillArray(int [] dest)</cite> in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/core/IntVarImpl.java">IntVarImpl.java</a>.</p></li>
+<li><p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java">IntVarTest.java</a> and <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/state/StateSparseSetTest.java">StateSparseSetTest.java</a>. Additionally, add more tests to <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java">IntVarTest.java</a>.</p></li>
 </ul>
 </section>
 <section id="the-absolute-value-constraint">
 <h2>The Absolute Value Constraint<a class="headerlink" href="#the-absolute-value-constraint" title="Permalink to this heading">¶</a></h2>
-<p>Implement <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Absolute.java?at=master">Absolute.java</a>.</p>
+<p>Implement <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Absolute.java">Absolute.java</a>.</p>
 <p>Several directions of implementation are possible:</p>
 <ol class="arabic simple">
 <li><p>The full domain-consistent version (use the <cite>fillArray</cite> method to iterate over domains).</p></li>
 <li><p>A hybrid domain-bound consistent one.</p></li>
 </ol>
-<p>Check that your implementation passes the tests <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/AbsoluteTest.java?at=master">AbsoluteTest.java</a>.</p>
+<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/AbsoluteTest.java">AbsoluteTest.java</a>.</p>
 </section>
 <section id="the-maximum-constraint">
 <h2>The Maximum Constraint<a class="headerlink" href="#the-maximum-constraint" title="Permalink to this heading">¶</a></h2>
-<p>Implement <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Maximum.java?at=master">Maximum.java</a>.</p>
+<p>Implement <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Maximum.java">Maximum.java</a>.</p>
 <p>Implement a bound-consistent filtering algorithm.</p>
-<p>Check that your implementation passes the tests <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/MaximumTest.java?at=master">MaximumTest.java</a>.</p>
+<p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/MaximumTest.java">MaximumTest.java</a>.</p>
 </section>
 </section>
 

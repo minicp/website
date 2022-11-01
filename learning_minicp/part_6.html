@@ -79,17 +79,17 @@ our solutions can contact us.</em></p>
 </section>
 <section id="forward-checking-filtering">
 <h2>Forward-Checking Filtering<a class="headerlink" href="#forward-checking-filtering" title="Permalink to this heading">¶</a></h2>
-<p>Implement a dedicated propagator <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/AllDifferentFWC.java?at=master">AllDifferentFWC.java</a>
+<p>Implement a dedicated propagator <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/AllDifferentFWC.java">AllDifferentFWC.java</a>
 for the global AllDifferent constraint.
-Unlike <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/AllDifferentBinary.java?at=master">AllDifferentBinary.java</a>,
+Unlike <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/AllDifferentBinary.java">AllDifferentBinary.java</a>,
 it must not decompose the AllDifferent constraint by posting binary disequality
 constraints but instead do the following: when a variable becomes fixed, its value is removed from the domains of all the other variables.
 This achieves the same filtering as <cite>AllDifferentBinary.java</cite>,
 namely what is called forward-checking consistency.
 Avoid iteration over already fixed variables when removing a value:
-implement the sparse-set technique, as in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Sum.java?at=master">Sum.java</a>.
-Test your implementation in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/AllDifferentFWCTest.java?at=master">AllDifferentFWCTest.java</a>.
-Modify <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/NQueens.java?at=master">NQueens.java</a>
+implement the sparse-set technique, as in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Sum.java">Sum.java</a>.
+Test your implementation in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/AllDifferentFWCTest.java">AllDifferentFWCTest.java</a>.
+Modify <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/NQueens.java">NQueens.java</a>
 by using <cite>AllDifferentFWC.java</cite> and experiment with the 15-queens instance:
 how much speed-up do you observe for finding all the solutions?</p>
 </section>
@@ -99,8 +99,8 @@ how much speed-up do you observe for finding all the solutions?</p>
 to remove every impossible value for the <cite>AllDifferent</cite> constraint (this is called generalized arc consistency and is also known as domain consistency).
 More precisely, you must:</p>
 <ul class="simple">
-<li><p>Implement the constraint <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/AllDifferentDC.java?at=master">AllDifferentDC.java</a>.</p></li>
-<li><p>Test your implementation in <a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/AllDifferentDCTest.java?at=master">AllDifferentDCTest.java.</a>.</p></li>
+<li><p>Implement the constraint <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/AllDifferentDC.java">AllDifferentDC.java</a>.</p></li>
+<li><p>Test your implementation in <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/AllDifferentDCTest.java">AllDifferentDCTest.java.</a>.</p></li>
 </ul>
 <p>Régin’s algorithm is a four-step procedure that can be described with the following figure:</p>
 <a class="reference internal image-reference" href="../_images/alldifferent-corrected.png"><img alt="profile" class="align-center" src="../_images/alldifferent-corrected.png" style="width: 737.2px; height: 538.08px;" /></a>
@@ -120,10 +120,10 @@ for variable and value nodes respectively.</p></li>
 </ol>
 <p>The two main algorithmic building blocks are provided:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/MaximumMatching.java?at=master">MaximumMatching.java</a>
+<li><p><a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/MaximumMatching.java">MaximumMatching.java</a>
 is a class that computes a maximum matching given an array of variables. Instantiate this class once in the constructor
 of <cite>AllDifferentDC</cite> and then call <cite>compute</cite> in the <cite>propagate</cite> method.</p></li>
-<li><p><a class="reference external" href="https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/util/GraphUtil.java?at=master">GraphUtil.java</a>
+<li><p><a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/main/java/minicp/util/GraphUtil.java">GraphUtil.java</a>
 contains a static method with signature <cite>public static int[] stronglyConnectedComponents(Graph graph)</cite> to compute the strongly connected
 components. The returned array gives for each node its connected component id.</p></li>
 </ul>

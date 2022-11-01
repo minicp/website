@@ -21,9 +21,9 @@ Theoretical Questions
 The Logical Clause Constraint and Watched Literals
 =======================================================
 
-* Implement the constraint `Or.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Or.java?at=master>`_
+* Implement the constraint `Or.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Or.java>`_
   for modeling the logical-clause constraint: `(x[0] or x[1] or x[2] or ... or x[n-1])`.
-* Test your implementation in `OrTest.java. <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/OrTest.java?at=master>`_.
+* Test your implementation in `OrTest.java. <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/OrTest.java>`_.
 * The implementation should use the watched-literals technique.
 
 A reminder about the watched-literals technique:
@@ -51,16 +51,16 @@ A reminder about the watched-literals technique:
 The Reified Logical-Clause Constraint
 =======================================================
 
-* Implement the constraint `IsOr.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsOr.java?at=master>`_
+* Implement the constraint `IsOr.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsOr.java>`_
   for modeling the reified logical-clause constraint: `b iff (x[0] or x[1] or x[2] or ... or x[n-1])`.
-* Test your implementation in `IsOrTest.java. <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/IsOrTest.java?at=master>`_.
+* Test your implementation in `IsOrTest.java. <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/IsOrTest.java>`_.
 * In case `b` is true, you can post your previous `Or` constraint
 (create it once and for all and post it when needed to avoid creating objects during search that would trigger garbage collection).
 
 Steel Mill Slab Problem: Modeling, Redundant Constraints, and Symmetry Breaking
 ======================================================================================
 
-A number of TODO tasks must be completed in `Steel.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/Steel.java?at=master>`_
+A number of TODO tasks must be completed in `Steel.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/Steel.java>`_
 so as to improve gradually the performance for solving this problem optimally:
 
 1. Model the objective function denoting the total loss to be minimized. You should use Element constraints to denote the loss

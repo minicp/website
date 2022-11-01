@@ -88,7 +88,7 @@ CT works in two steps:
    used by any supported tuple.
 
 Your task is to finish the implementation in
-`TableCT.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/TableCT.java?at=master>`_.
+`TableCT.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/TableCT.java>`_.
 
 `TableCT` maintains for each variable-value pair an array of bitsets:
 
@@ -156,7 +156,7 @@ You "simply" have to compute, for each call to `propagate()`:
 * You can now intersect the set of globally supported tuples with each variable-value pair in `supports`.
   If the value supports no tuples (i.e., if the intersection is empty), then the value can be removed.
 
-Check that your implementation passes the tests `TableTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/TableTest.java?at=master>`_.
+Check that your implementation passes the tests `TableTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/TableTest.java>`_.
 
 .. [CT2016] Demeulenaere, J., Hartert, R., Lecoutre, C., Perez, G., Perron, L., Régin, J.-C., & Schaus, P. (2016). Compact-table: Efficiently filtering table constraints with reversible sparse bit-sets. International Conference on Principles and Practice of Constraint Programming, pp. 207-223. Springer. (`PDF <https://doi.org/10.1007/978-3-319-44953-1_14>`_)
 
@@ -166,10 +166,10 @@ Eternity Problem
 Fill in all the gaps in order to solve the Eternity II problem.
 
 Your task is to finish the implementation in
-`Eternity.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/examples/Eternity.java?at=master>`_:
+`Eternity.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/Eternity.java>`_:
 
 * Create the table.
 * Model the problem using Table constraints.
 * Search for a feasible solution using branching combinators.
 
-Check that your implementation passes the tests `EternityTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/EternityTest.java?at=master>`_.
+Check that your implementation passes the tests `EternityTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/EternityTest.java>`_.

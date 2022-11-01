@@ -24,7 +24,7 @@ DFS Explicit Stack
 
 The search algorithm of MiniCP is *depth-first-search*.
 It is implemented using a recursive method in the class
-`DFSearch.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/search/DFSearch.java?at=master>`_.
+`DFSearch.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/search/DFSearch.java>`_.
 To avoid `stack-overflow` exceptions due to a too deep recursion in Java
 we ask you to reimplement the depth-first search with an explicit stack
 instead of relying on the recursion-call stack.
@@ -107,7 +107,7 @@ as illustrated on the next figure showing the stack after the root node expansio
     :align: center
 
 
-Check that your implementation passes the tests `DFSearchTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/search/DFSearchTest.java?at=master>`_.
+Check that your implementation passes the tests `DFSearchTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/DFSearchTest.java>`_.
 
 Remark (optional): It is possible to reduce the number of operations by skipping the save and restore
 operations for the for the last branch of any node (the branches B, C, E, and G in the
@@ -121,7 +121,7 @@ Implement a Custom Search
 
 For the Quadratic Assignment Problem (see the slides on the Element
 constraint of :ref:`Part 4: Sum and Element Constraints`), modify the model `QAP.java
-<https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/QAP.java?at=master>`_,
+<https://github.com/minicp/minicp/blob/master/src/main/java/minicp/examples/QAP.java>`_,
 where variable `x[i]` denotes the location of facility `i`,
 in order to implement a custom search strategy (and ignore the
 instructions on discrepancy search). A skeleton code for a custom search is as follows:
@@ -152,7 +152,7 @@ instructions on discrepancy search). A skeleton code for a custom search is as f
 
     public static <T, N extends Comparable<N>> T selectMin(T[] x, Predicate<T> p, Function<T, N> f)
 
-Check that your implementation passes the tests `QAPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/QAPTest.java?at=master>`_.
+Check that your implementation passes the tests `QAPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/QAPTest.java>`_.
 
 
 Sequencer Combinator
@@ -177,10 +177,10 @@ This can be achieved as follows:
     makeDfs(and(firstFail(x),firstFail(y)))
 
 
-The `and` factory method creates a  `Sequencer.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/search/Sequencer.java?at=master>`_.
+The `and` factory method creates a  `Sequencer.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/search/Sequencer.java>`_.
 You must complete its implementation.
 
-Check that your implementation passes the tests `SequencerTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/SequencerTest.java?at=master>`_.
+Check that your implementation passes the tests `SequencerTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/SequencerTest.java>`_.
 
 
 Check on INGInious
