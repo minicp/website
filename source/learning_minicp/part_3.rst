@@ -50,25 +50,32 @@ in the method `withNewState` of the state manager `sm`:
 
 .. code-block:: java
 
-    private void dfs(SearchStatistics statistics, Predicate<SearchStatistics> limit) {
+    private void dfs(SearchStatistics statistics, Predicate<SearchStatistics> limit, int parentId, int position) {
         if (limit.test(statistics))
             throw new StopSearchException();
         Procedure[] branches = branching.get();
+        final int nodeId = currNodeIdId++;
+
         if (branches.length == 0) {
             statistics.incrSolutions();
-            notifySolution();
+            notifySolution(parentId,nodeId, position);
         } else {
+            notifyBranch(parentId,nodeId, position, branches.length);
+            int pos = 0;
             for (Procedure b : branches) {
-                sm.withNewState(() -> { // State is saved before procedure is called.
+                final int p = pos;
+                sm.withNewState(() -> {
                     try {
                         statistics.incrNodes();
                         b.call();
-                        dfs(statistics, limit);
+                        dfs(statistics, limit, nodeId, p);
                     } catch (InconsistencyException e) {
+                        currNodeIdId++;
                         statistics.incrFailures();
-                        notifyFailure();
+                        notifyFailure(parentId,nodeId, p);
                     }
-                }); // State is restored when procedure terminates.
+                });
+                pos += 1;
             }
         }
     }
@@ -77,34 +84,39 @@ Skeleton code for a solution is given below. However, there are many possible im
 the skeleton code.
 
 .. code-block:: java
-   :emphasize-lines: 3
+   :emphasize-lines: 6
 
-    private void dfs(SearchStatistics statistics, Predicate<SearchStatistics> limit) {
-        Stack<Procedure> alternatives = new Stack<Procedure>();
-        expandNode(alternatives, statistics); // root expansion
-        while (!alternatives.isEmpty()) {
-            if (limit.test(statistics))
-                throw new StopSearchException();
-            try {
-                alternatives.pop().call();
-            } catch (InconsistencyException e) {
-                notifyFailure();
-                statistics.incrFailures();
-            }
-        }
-    }
-    private void expandNode(Stack<Procedure> alternatives, SearchStatistics statistics) {
-        // TODO
-    }
+   private void dfs(SearchStatistics statistics, Predicate<SearchStatistics> limit, int parentId, int position) {
+       if (limit.test(statistics))
+           throw new StopSearchException();
+       Stack<Procedure> alternatives = new Stack<Procedure>();
+       sm.withNewState(() -> {
+           expandNode(alternatives, statistics, parentId, position); // root expansion
+           while (!alternatives.isEmpty()) {
+               if (limit.test(statistics)) {
+                   throw new StopSearchException();
+               }
+               alternatives.pop().call();
+           }
+       });
+   }
+
+   private void expandNode(Stack<Procedure> alternatives, SearchStatistics statistics, int parentId, int position) {
+       // TODO
+   }
 
 
-The idea of this solution is wrap the save, restore, and branch executions inside `Alternative` closure objects,
+The idea of this solution is to wrap the save, restore, and branch executions inside `Alternative` closure objects,
 as illustrated on the next figure showing the stack after the root node expansion at line 3.
 
 .. image:: ../_static/stackalternatives.svg
     :width: 250
     :alt: DFS
     :align: center
+
+Note that each branch procedure must be wrapped inside a closure that catches any `InconsistencyException` thrown.
+If such an exception is caught, then the number of failures is to be increased,
+the failure is to be notified, and no sub-branches of the corresponding branch is to be expanded. 
 
 
 Check that your implementation passes the tests `DFSearchTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/DFSearchTest.java>`_.
