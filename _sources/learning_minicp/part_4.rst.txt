@@ -46,13 +46,13 @@ Implement a propagator
 `Element1D.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Element1D.java?at=master>`_
 by following the ideas (also in the slides) for `Element2D`,
 which however do not lead to domain consistency for both variables.
-Check that your propagator passes the tests
+Check that your implementation passes the tests
 `Element1DTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/Element1DTest.java?at=master>`_.
 
 Also implement a propagator
 `Element1DDomainConsistent.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/main/java/minicp/engine/constraints/Element1DDomainConsistent.java?at=master>`_
 that achieves domain consistency for both variables.
-Check that your propagator passes the tests
+Check that your implementation passes the tests
 `Element1DDCTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/Element1DDCTest.java?at=master>`_.
 
 
@@ -74,7 +74,7 @@ Two directions of implementation are:
 * The domain-consistent propagator
   achieves domain consistency for `y`, `z`, and all the `T[i]`.
 
-Check that your propagator passes the tests
+Check that your implementation passes the tests
 `Element1DVarTest.java <https://bitbucket.org/minicp/minicp/src/HEAD/src/test/java/minicp/engine/constraints/Element1DVarTest.java?at=master>`_.
 Those tests do not check that your propagator achieves domain
 consistency for all the variables, so you have to write additional tests
@@ -88,4 +88,4 @@ Complete the partial model `StableMatching.java <https://bitbucket.org/minicp/mi
 It makes use of the `Element1DVar` constraint you have just
 implemented and is also a good example of the manipulation of logical and reified constraints.
 Ensure that your implementation discovers all 6 solutions to the provided instance.
-
+Check that your implementation passes the tests `StableMatchingTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/StableMatchingTest.java?at=master>`_.

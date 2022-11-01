@@ -152,6 +152,9 @@ instructions on discrepancy search). A skeleton code for a custom search is as f
 
     public static <T, N extends Comparable<N>> T selectMin(T[] x, Predicate<T> p, Function<T, N> f)
 
+Check that your implementation passes the tests `QAPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/QAPTest.java?at=master>`_.
+
+
 Sequencer Combinator
 ======================
 
@@ -176,6 +179,9 @@ This can be achieved as follows:
 
 The `and` factory method creates a  `Sequencer.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/search/Sequencer.java?at=master>`_.
 You must complete its implementation.
+
+Check that your implementation passes the tests `SequencerTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/SequencerTest.java?at=master>`_.
+
 
 Check on INGInious
 ==================
