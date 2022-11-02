@@ -93,7 +93,7 @@ the following properties of the activities:</p>
 <p>The constraint ensures that the cumulative resource requirement of activities (also called the requirement profile)
 never exceeds the capacity:</p>
 <div class="math">
-<p><span class="math">\forall t: \sum_{i : t \in \left [start[i]..start[i]+duration[i]-1 \right ]} requirement[i] \le capa</span></p>
+<p><img src="../_images/math/23d8ad7c13fbb4b698d21012e030db77d0b03ca7.png" alt="\forall t: \sum_{i : t \in \left [start[i]..start[i]+duration[i]-1 \right ]} requirement[i] \le capa"/></p>
 </div><p>The following example depicts three activities and their corresponding
 requirement profile. As can be observed, the profile never exceeds
 the capacity 4:</p>
@@ -110,7 +110,7 @@ used in the equation above to describe its semantics.</p>
 designates whether activity <cite>i</cite> overlaps, potentially being performed at, <cite>t</cite> or not.
 The overall resource requirement at <cite>t</cite> can then be obtained by:</p>
 <div class="math">
-<p><span class="math">\sum_{i} overlaps[i] \cdot requirement[i] \le capa</span></p>
+<p><img src="../_images/math/88bc65fca998b5ff9316487fcb749a282e7196ca.png" alt="\sum_{i} overlaps[i] \cdot requirement[i] \le capa"/></p>
 </div><p>First make sure you understand the following code, and then
 add the few lines in its <cite>TODO</cite> task in order to make
 sure <cite>overlaps</cite> has the intended meaning:</p>
