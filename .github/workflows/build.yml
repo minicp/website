@@ -19,6 +19,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: StepX - Make userguide
         run: |
+          apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
           make html
       - name: Step 3 - Save user-guide build /tmp
         run: |
