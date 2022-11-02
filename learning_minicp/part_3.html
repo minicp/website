@@ -154,7 +154,7 @@ as illustrated on the next figure showing the stack after the root node expansio
 <a class="reference internal image-reference" href="../_images/stackalternatives.svg"><img alt="DFS" class="align-center" src="../_images/stackalternatives.svg" width="250" /></a>
 <p>Note that each branch procedure must be wrapped inside a closure that catches any <cite>InconsistencyException</cite> thrown.
 If such an exception is caught, then the number of failures is to be increased,
-the failure is to be notified, and no sub-branches of the corresponding branch is to be expanded.</p>
+the failure is to be notified, and no sub-branches of the corresponding branch are to be expanded.</p>
 <p>Check that your implementation passes the tests <a class="reference external" href="https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/DFSearchTest.java">DFSearchTest.java</a>.</p>
 <p>Remark (optional): It is possible to reduce the number of operations by skipping the save and restore
 operations for the for the last branch of any node (the branches B, C, E, and G in the
