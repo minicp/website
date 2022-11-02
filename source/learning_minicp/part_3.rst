@@ -116,7 +116,7 @@ as illustrated on the next figure showing the stack after the root node expansio
 
 Note that each branch procedure must be wrapped inside a closure that catches any `InconsistencyException` thrown.
 If such an exception is caught, then the number of failures is to be increased,
-the failure is to be notified, and no sub-branches of the corresponding branch is to be expanded. 
+the failure is to be notified, and no sub-branches of the corresponding branch are to be expanded. 
 
 
 Check that your implementation passes the tests `DFSearchTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/DFSearchTest.java>`_.
