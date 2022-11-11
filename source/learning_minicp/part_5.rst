@@ -166,7 +166,7 @@ You can simply copy/paste/modify this implementation for the TSP:
 * What is the impact of the percentage of variables relaxed (experiment with 5%, 10%, and 20%)?
 * What is the impact of the failure limit (experiment with 50, 100, and 1000)?
 * Which parameter setting works best? How did you choose it?
-* Imagine a different relaxation specific to this problem.  Try and relax the variables that have the strongest impact on the objective with a greater probability (the choice of relaxed variables should still be somehow randomized).  You can for instance select a subset of cities with the largest distance to their successor and permit those cities to be reinserted anywhere in the circuit.  This requires keeping the relaxed cities (those that are to be reinserted) within the domains of the successor variables of the non-relaxed cities.
+* Implement a relaxation that is specific to this problem.  Try and relax the variables that have the strongest impact on the objective with a greater probability (the choice of relaxed variables should still be somehow randomized).  You can for instance select a subset of cities with the largest distance to their successor and permit those cities to be reinserted anywhere in the circuit.  This requires keeping the relaxed cities (those that are to be reinserted) within the domains of the successor variables of the non-relaxed cities.
 
 Check that your implementation passes the tests `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java>`_.
 
