@@ -34,7 +34,7 @@ Of course you should get a strong inspiration from the
 `TableCT.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/TableCT.java>`_
 implementation you did in a previous exercise.
 
-Check that your implementation passes the tests `NegTableTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/NegTableTest.java>`_
+Verify that your implementation passes the tests of `NegTableTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/NegTableTest.java>`_
 
 
 

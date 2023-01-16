@@ -23,6 +23,10 @@ Conflict-based Search Strategies
 
 Implement the Last Conflict [LC2009]_ and Conflict Ordering Search [COS2015]_ heuristics.
 
+In MiniCP, a conflict is when when an inconsistency occurs during search. 
+The last conflicting variable is the most recent variable that was branched on. 
+In MiniCP, when an inconsistency occurs, an `InconsistencyException` is thrown and needs to be caught during branching by the conflict search heuristic.
+
 Test your implementations in `LastConflictSearchTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/LastConflictSearchTest.java>`_
 and `ConflictOrderingSearchTest.java. <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/ConflictOrderingSearchTest.java>`_.
 
@@ -40,16 +44,28 @@ Implement within `TSPBoundImpact.java <https://github.com/minicp/minicp/blob/mas
 Verify experimentally that the first solution found is smaller than with the default minimum-value heuristic.
 You can also use it in combination with your conflict ordering search.
 
-Hint: You can test the effect on the objective value by first saving the state,
-fixing the variable to a value, and retrieving the new domain of the objective variable, before finally restoring the
-previous state.
+**Hint**: You can test the effect on the objective value by:
+
+1. saving the state, 
+2. fixing the selected variable to a value with the `equal` constraint, 
+3. retrieving the new domain of the objective variable, and finally
+4. restoring the previous state.
+
+Don't forget to catch any `InconsistencyException` that might occur.
 
 .. [BIVS2017] Fages, J.-G., & Prud'Homme, C. (2017). Making the first solution good! IEEE 29th International Conference on Tools with Artificial Intelligence. IEEE. (`PDF <https://doi.org/10.1109/ICTAI.2017.00164>`_)
 
 Limited Discrepancy Search (optional)
 =================================================================
 
-Implement `LimitedDiscrepancyBranching`, a branching that can wrap any branching
-to limit the discrepancy of the branching.
+Implement `LimitedDiscrepancyBranching`, a branching that can wrap any branching to limit the discrepancy of the branching.
 
-Test your implementation in `LimitedDiscrepancyBranchingTest.java. <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/LimitedDiscrepancyBranchingTest.java>`_.
+The following figure depicts a search tree where the number of each node is the discrepancy of that node:
+
+.. image:: ../_static/discrepancy-search.svg
+  :width: 600
+  :alt: Discrepancy Search
+  :align: center
+
+
+Verify that your implementation passes the tests of `LimitedDiscrepancyBranchingTest.java. <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/search/LimitedDiscrepancyBranchingTest.java>`_.

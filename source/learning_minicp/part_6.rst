@@ -45,10 +45,8 @@ Domain-Consistent Filtering
 
 The objective is to implement the filtering algorithm described in [Regin94]_
 to remove every impossible value for the `AllDifferent` constraint (this is called generalized arc consistency and is also known as domain consistency).
-More precisely, you must:
 
-* Implement the constraint `AllDifferentDC.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/AllDifferentDC.java>`_.
-* Test your implementation in `AllDifferentDCTest.java. <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/AllDifferentDCTest.java>`_.
+Implement the constraint `AllDifferentDC.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/AllDifferentDC.java>`_.
 
 Régin's algorithm is a four-step procedure that can be described with the following figure:
 
@@ -99,8 +97,9 @@ to represent the residual graph of the maximum matching:
 It uses an adjacency list that is updated in the method `updateGraph()`.
 We advise you to use a dense representation with node ids as illustrated on the black nodes of the example (step2: directed graph).
 
-Once your code passes the tests, you can experiment your new
-constraint on all the models you have seen so far in order
-to measure the pruning gain on the number of nodes (n-Queens, TSP, QAP, etc).
+Verify that  your implementation passes the tests of `AllDifferentDCTest.java. <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/AllDifferentDCTest.java>`_.
+
+Once your implementation passes the tests, you can experiment on all previously seen models that make use of the `AllDifferent` constraint (n-Queens, TSP, QAP, etc), 
+by replacing each usage of the binary decomposition constraint with this one. Is there a big difference in the number of nodes in the search trees?
 
 .. [Regin94] Régin, J.-C. (1994). A filtering algorithm for constraints of difference in CSPs. 12th National Conference on Artificial Intelligence (AAAI-94). (`PDF <https://aaai.org/Papers/AAAI/1994/AAAI94-055.pdf>`_)
