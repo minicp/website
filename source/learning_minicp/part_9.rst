@@ -113,7 +113,7 @@ sure `overlaps` has the intended meaning:
         }
 
 
-Check that your implementation passes the tests `CumulativeDecompTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CumulativeDecompTest.java>`_.
+Verify that your implementation passes the tests of `CumulativeDecompTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CumulativeDecompTest.java>`_.
 
 
 
@@ -229,7 +229,7 @@ activity (if needed) to the earliest slot when it can be executed without exceed
         }
 
 
-Check that your implementation passes the tests `CumulativeTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CumulativeTest.java>`_.
+Verify that your implementation passes the tests of `CumulativeTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CumulativeTest.java>`_.
 
 
 .. [TT2015] Gay, S., Hartert, R., & Schaus, P. (2015). Simple and scalable time-table filtering for the cumulative constraint. International Conference on Principles and Practice of Constraint Programming, pp. 149-157. Springer. (`PDF <https://doi.org/10.1007/978-3-319-23219-5_11>`_)
@@ -252,4 +252,4 @@ Several instances of increasing size are available, with 30, 60, 90, and 120 act
 In order to test your model, note that the instance ``j30_1_1.rcp`` should have a minimum makespan of 43.
 Do not expect to prove optimality for large-size instances, but you should reach it easily for 30 activities.
 
-Check that your implementation passes the tests `RCPSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/RCPSPTest.java>`_.
+Verify that your implementation passes the tests of `RCPSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/RCPSPTest.java>`_.

@@ -30,16 +30,16 @@ Implement the missing constructor in `IntVarImpl.java <https://github.com/minicp
         throw new NotImplementedException();
     }
 
-This exercise is straightforward: just create a dense domain and then remove the values not present in the set.
+Create a dense domain and then remove all values not present in the set `values`.
 
-Check that your implementation passes the tests `IntVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java>`_.
+Verify that your implementation passes the tests of `IntVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java>`_.
 
 Implement a Domain Iterator
 ======================================
 
 Many filtering algorithms require iteration over the values of a domain.
 
-A naive (but correct) way of iterating over a domain is:
+A naive (and correct) way of iterating over the values of a domain is:
 
 
 .. code-block:: java
@@ -50,25 +50,23 @@ A naive (but correct) way of iterating over a domain is:
         }
     }
 
-This method is rather inefficient because it will also consider the values that are not present in the domain.
+This method is rather inefficient as it will (possibly) iterate over values that are not present in the domain.
 Instead, the `fillArray` method from `StateSparseSet.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/state/StateSparseSet.java>`_
-allows filling an array with all the values present in the sparse set.
-In case of an offset value of 0, you could even use the very efficient `System.arraycopy`.
+allows filling an array only with the values present in the sparse set.
+Additionally, if the offset is 0, then the very efficient method `System.arraycopy` can be used.
 
-The main advantage over the iterator mechanism is that no object is created (and thus garbage collected).
-Indeed `dest` is typically a container array stored as an instance variable and reused many times.
-It is important for efficiency to avoid creating objects on the heap at each execution of a propagator.
-Never forget that a `propagate()` method of `Constraint` may be called thousands of times per second.
-This implementation using `fillArray` avoids the `ConcurrentModificationException` discussion
-when implementing an Iterator: should we allow modifying a domain while iterating on it?
-The answer here is very clear: you get a snapshot of the domain at the time of the call to `fillArray` and you can thus
-safely iterate over this `dest` array and modify the domain at the same time.
+If the array that stores the returned array of the method `fillArray` is an instance variable, then it will not be garbage collected by the java garbage collector, resulting in a very efficient implementation.
+It is important for efficiency to avoid creating objects on the heap (such as arrays) at each execution of propagators that need to be garbage collected, 
+as the `propagate()` method of a constraint can be called thousands of times every second.
+
+Since the implementation using `fillArray` iterates on a copy of the array containing the domain, any modification on the actual domain will not carry over to the copy, and vice versa, removing any 
+`ConcurrentModificationException` exceptions that might otherwise have been thrown.
 
 To do:
 
-* Improve the efficiency of `fillArray` from `StateSparseSet.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/state/StateSparseSet.java>`_ in order to use `System.arraycopy` when possible.
+* Improve the efficiency of `fillArray` from `StateSparseSet.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/state/StateSparseSet.java>`_, using `System.arraycopy` where possible.
 * Implement `public int fillArray(int [] dest)` in `IntVarImpl.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/core/IntVarImpl.java>`_.
-* Check that your implementation passes the tests `IntVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java>`_ and `StateSparseSetTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/state/StateSparseSetTest.java>`_. Additionally, add more tests to `IntVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java>`_.
+* Verify that your implementation passes the tests of `IntVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java>`_ and `StateSparseSetTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/state/StateSparseSetTest.java>`_. Additionally, add more tests to `IntVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/core/IntVarTest.java>`_.
 
 The Absolute Value Constraint
 ==============================
@@ -80,7 +78,7 @@ Several directions of implementation are possible:
 1. The full domain-consistent version (use the `fillArray` method to iterate over domains).
 2. A hybrid domain-bound consistent one.
 
-Check that your implementation passes the tests `AbsoluteTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/AbsoluteTest.java>`_.
+Verify that your implementation passes the tests of `AbsoluteTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/AbsoluteTest.java>`_.
 
 
 The Maximum Constraint
@@ -90,4 +88,6 @@ Implement `Maximum.java <https://github.com/minicp/minicp/blob/master/src/main/j
 
 Implement a bound-consistent filtering algorithm.
 
-Check that your implementation passes the tests `MaximumTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/MaximumTest.java>`_.
+**Hint**: Given :math:`y = \max (X)`, where :math:`X` is an array of variables, what are the lower and upper bounds of :math:`y`?
+
+Verify that your implementation passes the tests of `MaximumTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/MaximumTest.java>`_.

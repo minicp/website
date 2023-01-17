@@ -40,23 +40,36 @@ Less-or-equal Reified Constraint
 
 Implement `IsLessOrEqual.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsLessOrEqual.java>`_.
 
-This is a propagator for the constraint `b iff x <= c`, which is called the `reified constraint` (or: `reification`) of the constraint `x <= c`: it holds if Boolean variable `b` is true if and only if variable `x` is less than or equal to value `c`.
+This is a propagator for the constraint :math:`b \Leftrightarrow x \leq c`, which is called the `reified constraint` (or: `reification`) of the constraint :math:`x \leq c`: it holds if the value of Boolean variable :math:`b` is true if and only if the value of variable :math:`x` is less than or equal to the value :math:`c`.
 
 For example, the constraint holds for
 
-.. code-block:: java
+.. math::
 
-    b = true , x = 4, c = 5
-    b = false, x = 4, c = 2
+    \text{Dom}(b) = \{\mathit{true}\} , \text{Dom}(x) = \{4\}, c = 5
+
+and
+
+.. math::
+
+    \text{Dom}(b) = \{\mathit{false}\}, \text{Dom}(x) = \{4\}, c = 2
 
 
 but is violated for
 
-.. code-block:: java
+.. math::
 
-    b = true , x = 5, c = 4
-    b = false, x = 2, c = 4
+    \text{Dom}(b) = \{\mathit{true}\} , \text{Dom}(x) = \{5\}, c = 4
 
-For an example of reification, you can look at `IsEqual.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsEqual.java>`_.
+and violated for 
 
-Check that your implementation passes the tests `IsLessOrEqualTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/IsEqualTest.java>`_.
+.. math::
+
+    \text{Dom}(b) = \{\mathit{false}\}, \text{Dom}(x) = \{2\}, c = 4
+
+
+where the function :math:`\text{Dom}` returns the domain of the given variable.
+
+**Hint**: use `IsEqual.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsEqual.java>`_ as a reference when implementing the constraint.
+
+Verify that your implementation passes the tests of `IsLessOrEqualTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/IsEqualTest.java>`_.

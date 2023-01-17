@@ -52,6 +52,7 @@ For your implementation, use the following arrays of stateful integers as the da
 
 where:
 
+* The domain of `x[i]` is the set containing all potential successors nodes of `i`; 
 * `dest[i]` is the last (non-fixed) node that can be reached from node `i` if node `i` is fixed and on a partial path; otherwise it is `i`;
 * `orig[i]` is the first (fixed) node that can reach node `i` if node `i` is on a partial path; otherwise it is `i`;
 * `lengthToDest[i]` is the length of the partial path from node `i` to node `dest[i]` if node `i` is on a partial path; otherwise it is 0.
@@ -63,8 +64,7 @@ Consider the following example where edges originating from fixed nodes are colo
     :alt: Circuit
     :align: center
 
-Before node 5 has been fixed, the green edge has not yet been added,
-so we have:
+Before node 5 has been fixed (the green edge has not yet been added), we have (by abuse of notation):
 
 .. code-block:: java
 
@@ -72,7 +72,7 @@ so we have:
     orig = [0,1,0,4,4,4];
     lengthToDest = [1,0,0,1,2,0];
 
-After node 5 has been fixed, the green edge has been added, so we have:
+After node 5 has been fixed (the green edge has been added), we have (by abuse of notation):
 
 .. code-block:: java
 
@@ -82,18 +82,17 @@ After node 5 has been fixed, the green edge has been added, so we have:
 
 In your implementation, you must update the stateful integers in order
 to reflect the changes after the addition of new edges to the circuit.
-An edge is added whenever a node becomes fixed: you can use the `CPIntVar.whenBind(...)` method to run some code block
-when this event occurs.
+An edge is to be added whenever a node becomes fixed: you can use the `CPIntVar.whenFixed(p)` method to execute the some procedure `p` when this event occurs.
 
-The filtering algorithm is to prevent closing each
-partial path that would have a length less than `n` (the total number of nodes) as that would result in a non-Hamiltonian circuit.
+The filtering algorithm is to prevent creating sub-circuits (any circuit that does not contain all nodes), as that would result in a non-Hamiltonian circuit.
 Since node 4 (the origin of a partial path) has a length to its destination (node 2) of 4 (<6), the destination node 2 cannot
 have the origin node 4 as a successor and the red edge is deleted.
 This filtering was introduced in [TSP1998]_ for solving the traveling
 salesperson problem (TSP) with CP.
 
 Implement a propagator `Circuit.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Circuit.java>`_.
-Check that your implementation passes the tests `CircuitTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CircuitTest.java>`_.
+
+Verify that your implementation passes the tests of `CircuitTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CircuitTest.java>`_.
 
 .. [TSP1998] Pesant, G., Gendreau, M., Potvin, J. Y., & Rousseau, J. M. (1998). An exact constraint logic programming algorithm for the traveling salesman problem with time windows. Transportation Science, 32(1), 12-29.
 	     
@@ -126,17 +125,17 @@ vehicle routing problem (VRP) in general.
 The one you design should be more similar to the decision you would
 make in a greedy algorithm.
 For instance, you can select as a successor for `xi`
-a closest city in its domain.
+a closest node in its domain.
 
-Hint: Since there is no iterator on the domain of a variable, you can
+**Hint**: Since there is no iterator on the domain of a variable, you can
 iterate from its minimum value to its maximum one by using a `for` loop
 and checking that the value of the current iteration is in the domain using the `contains` method.
 You can also use your iterator from :ref:`Part 2: Domains, Variables, Constraints`.
 
 You can also implement a min-regret variable selection strategy:
 it selects a variable with the largest difference between a closest
-successor city and a second-closest one.
-The idea is that it is critical to decide the successor for this city first,
+successor node and a second-closest one.
+The idea is that it is critical to decide the successor for this node first,
 because otherwise one will regret it the most.
 
 Observe the first solution obtained to the provided instance and its objective value:
@@ -144,7 +143,7 @@ is it better than upon naive first-fail?
 Also observe the time and number of backtracks necessary for proving optimality:
 by how much did you reduce the computation time and number of backtracks?
 
-Check that your implementation passes the tests `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java>`_.
+Verify that your implementation passes the tests of `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java>`_.
 
 
 LNS Applied to TSP
@@ -155,7 +154,10 @@ Implement and apply large-neighborhood search (LNS) by modifying
 
 What you should do:
 
-* Record the current best solution. Hint: Use the `onSolution` call-back on the `DFSearch` object.
+* Record the current best solution.
+  
+  **Hint**: Use the `onSolution` call-back on the `DFSearch` object.
+
 * Implement a restart strategy fixing randomly 10% of the variables to their value in the current best solution.
 * Each restart has a failure limit of 100 backtracks.
 
@@ -166,9 +168,9 @@ You can simply copy/paste/modify this implementation for the TSP:
 * What is the impact of the percentage of variables relaxed (experiment with 5%, 10%, and 20%)?
 * What is the impact of the failure limit (experiment with 50, 100, and 1000)?
 * Which parameter setting works best? How did you choose it?
-* Implement a relaxation that is specific to this problem.  Try and relax the variables that have the strongest impact on the objective with a greater probability (the choice of relaxed variables should still be somehow randomized).  You can for instance select a subset of cities with the largest distance to their successor and permit those cities to be reinserted anywhere in the circuit.  This requires keeping the relaxed cities (those that are to be reinserted) within the domains of the successor variables of the non-relaxed cities.
+* Implement a relaxation that is specific to this problem.  Try and relax the variables that have the strongest impact on the objective with a greater probability (the choice of relaxed variables should still be somehow randomized).  You can for instance select a subset of nodes with the largest distance to their successor and permit those nodes to be reinserted anywhere in the circuit.  This requires keeping the relaxed nodes (those that are to be reinserted) within the domains of the successor variables of the non-relaxed nodes.
 
-Check that your implementation passes the tests `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java>`_.
+Verify that your implementation passes the tests of `TSPTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/examples/TSPTest.java>`_.
 
 
 From TSP to VRP
@@ -176,10 +178,33 @@ From TSP to VRP
 
 Create a new file called `VRP.java` working with the same distance matrix as the TSP but assuming
 that there are now :math:`k` vehicles (make it a parameter and experiment with :math:`k=3`).
-The depot is the city at index `0`, and every other city must be
+The depot is the node at index `0`, and every other node must be
 visited exactly once by exactly one of the :math:`k` vehicles:
 
 * Variant 1:  Minimize the total distance traveled by the three vehicles.
 * Variant 2 (advanced): Minimize the longest distance traveled by the three vehicles (in order to be fair among the vehicle drivers).
+  A good branching strategy for this variant is to:
+    1. as a variable selection heuristic select the last node `x[i]` on the path of vehicle `v`, where `v` currently has the shortest travel time of all vehicles,
+    2. as a value selection heuristic greedily select the node `j` that is closest to node `x[i]` among all nodes in the domain of `x[i]`.
+
+    As an example of the search heuristic, consider the following figure where 
+    
+    * :math:`s_v` is the start node of vehicle :math:`v` (the depot), 
+    * :math:`t_v` is the end node of vehicle :math:`v` (the depot), and
+    * the nodes :math:`\{4,6,7,8,10,12\}` are successors of no nodes:
+    
+    .. image:: ../_static/vrp-search.svg
+      :width: 512
+      :alt: VRP Search Heuristic
+      :align: center
+    
+    The distances the vehicles have traveled this far are:
+    
+    * :math:`d_0 = \text{distance}[s_0][3]` for vehicle :math:`0`, 
+    * :math:`d_1 = \text{distance}[s_1][5] + \text{distance}[5][9]` for vehicle :math:`1`, and
+    * :math:`d_2 = \text{distance}[s_2][11]` for vehicle :math:`2`.
+    
+    Say distance :math:`d_1` is the shortest distance, then the variable selected would be node `x[9]`.
+    The value selected would correspond to the shortest distance from node `9` to any node in the domain of `x[9]`.
 
 You can also use LNS to speed up the search.
