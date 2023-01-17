@@ -62,10 +62,10 @@ The Global Disjunctive Constraint: Overload Checker, Detectable Precedence, and 
 * Overload checking, detectable precedences, not-first-not-last, and edge finding only filter one side of the activities.
   To get the symmetrical filtering, implement the mirroring activities trick similarly to `Cumulative.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Cumulative.java>`_.
 * **Hint**: overload checking, detectable precedences, and not-last all require an array `permEst` that is a permutation of the indices of the activities sorted increasingly by their earliest starting times
-  (`permEst[0]` holds the activity with the smallest earliest starting time, while `permEst[n - 1]` the activity with the greatest earliest starting time), as well as an
-  array `rankEst` that is the inverse to `permEst` (if `permEst[j] = i`, then `rankEst[i] = j`).
-  Create a helper method that sorts an array `permEst` and updates an array
-  `rankEst` (both arrays are favourably instance variables of the `Disjunctive` class).
+  (`permEst[0]` holds the activity with the smallest earliest starting time, while `permEst[n - 1]` holds the activity with the greatest earliest starting time), as well as an
+  array `rankEst` that is the inverse of `permEst` (if `permEst[j] = i`, then `rankEst[i] = j`).
+  
+  Create a helper method that sorts the array `permEst` and updates the array `rankEst` (both arrays are preferably instance variables of the `Disjunctive` class).
 * Implement the overload checker in `Disjunctive.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Disjunctive.java>`_.
   
   Verify that your implementation passes the test `testOverloadChecker` of `DisjunctiveTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/DisjunctiveTest.java>`_.

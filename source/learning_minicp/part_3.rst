@@ -164,8 +164,8 @@ Here follows some skeleton code for a custom search heuristic of the quadratic a
 
 To do:
 
-1. Find a pair of integers `i` and `j` (representing facilities `i` and `j`), with `i != j`, where `x[i]` is unfixed (a facility not yet assigned to a location) and `x[j]` (fixed or unfixed), that has a maximum weight `w[i][j]`.
-2. Find a pair of integers `k` and `l` (representing the locations of facilities `i` and `j` respectively), with a minimum distance `distances[k][l]`.
+1. Find a pair of integers `i` and `j` (representing facilities `i` and `j`), with `i != j`, where `x[i]` is unfixed (a facility not yet assigned to a location) and `x[j]` is fixed or unfixed, that has maximum weight `w[i][j]`.
+2. Find a pair of integers `k` and `l` (representing the locations of facilities `i` and `j` respectively), with minimum distance `distances[k][l]`.
 
 * As a variable selection heuristic, select facility `x[i]`.
 * As a value selection heuristic, select location `k`.

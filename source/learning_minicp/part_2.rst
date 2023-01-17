@@ -59,7 +59,7 @@ If the array that stores the returned array of the method `fillArray` is an inst
 It is important for efficiency to avoid creating objects on the heap (such as arrays) at each execution of propagators that need to be garbage collected, 
 as the `propagate()` method of a constraint can be called thousands of times every second.
 
-Since the implementation using `fillArray` iterates on a copy of the array containing the domain, any modification on the actual domain will not carry over to the copy, and vice versa, remving and 
+Since the implementation using `fillArray` iterates on a copy of the array containing the domain, any modification on the actual domain will not carry over to the copy, and vice versa, removing any 
 `ConcurrentModificationException` exceptions that might otherwise have been thrown.
 
 To do:

@@ -91,6 +91,7 @@ This filtering was introduced in [TSP1998]_ for solving the traveling
 salesperson problem (TSP) with CP.
 
 Implement a propagator `Circuit.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/Circuit.java>`_.
+
 Verify that your implementation passes the tests of `CircuitTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/CircuitTest.java>`_.
 
 .. [TSP1998] Pesant, G., Gendreau, M., Potvin, J. Y., & Rousseau, J. M. (1998). An exact constraint logic programming algorithm for the traveling salesman problem with time windows. Transportation Science, 32(1), 12-29.
@@ -183,8 +184,8 @@ visited exactly once by exactly one of the :math:`k` vehicles:
 * Variant 1:  Minimize the total distance traveled by the three vehicles.
 * Variant 2 (advanced): Minimize the longest distance traveled by the three vehicles (in order to be fair among the vehicle drivers).
   A good branching strategy for this variant is to:
-    1. as a variable selection heuristic select the last node `x[i]` on the path of vehicle `v`, where `v` currently has a shortest travel time of all vehicles,
-    2. as a value selection heuristic greedily selecting node `j` that is closest to node `x[i]` among all nodes in the domain of `x[i]`.
+    1. as a variable selection heuristic select the last node `x[i]` on the path of vehicle `v`, where `v` currently has the shortest travel time of all vehicles,
+    2. as a value selection heuristic greedily select the node `j` that is closest to node `x[i]` among all nodes in the domain of `x[i]`.
 
     As an example of the search heuristic, consider the following figure where 
     
@@ -197,13 +198,13 @@ visited exactly once by exactly one of the :math:`k` vehicles:
       :alt: VRP Search Heuristic
       :align: center
     
-    The distances the vehicles have travelled this far are:
+    The distances the vehicles have traveled this far are:
     
     * :math:`d_0 = \text{distance}[s_0][3]` for vehicle :math:`0`, 
     * :math:`d_1 = \text{distance}[s_1][5] + \text{distance}[5][9]` for vehicle :math:`1`, and
     * :math:`d_2 = \text{distance}[s_2][11]` for vehicle :math:`2`.
     
     Say distance :math:`d_1` is the shortest distance, then the variable selected would be node `x[9]`.
-    The value selected would correspond with a shortest distance from node `9` to any node in the domain of `x[9]`.
+    The value selected would correspond to the shortest distance from node `9` to any node in the domain of `x[9]`.
 
 You can also use LNS to speed up the search.

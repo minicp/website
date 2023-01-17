@@ -70,6 +70,6 @@ and violated for
 
 where the function :math:`\text{Dom}` returns the domain of the given variable.
 
-**Hint**: use `IsEqual.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsEqual.java>`_ as reference when implementing the constraint.
+**Hint**: use `IsEqual.java <https://github.com/minicp/minicp/blob/master/src/main/java/minicp/engine/constraints/IsEqual.java>`_ as a reference when implementing the constraint.
 
 Verify that your implementation passes the tests of `IsLessOrEqualTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/IsEqualTest.java>`_.

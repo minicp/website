@@ -84,8 +84,8 @@ Two directions of implementation are:
 * The domain-consistent propagator
   achieves domain consistency for :math:`y`, :math:`z`, and all the :math:`T[i]`.
 
-Note: given :math:`T=[x_0, x_1]`, :math:`\text{Dom}(x_0)=\{3, 4\}`, :math:`\text{Dom}(x_1)=\{4, 5\}`, :math:`\text{Dom}(y)=\{0, 1\}`, and :math:`\text{Dom}(z)={4}`, the value :math:`3` **can not** be removed from the domain of :math:`x_0`
-and the value :math:`5` **can not** be removed from :math:`x_1`. However, when :math:`y` becomes fixed, say to :math:`0`, then :math:`3` is to be removed from the 
+Note: given :math:`T=[x_0, x_1]`, :math:`\text{Dom}(x_0)=\{3, 4\}`, :math:`\text{Dom}(x_1)=\{4, 5\}`, :math:`\text{Dom}(y)=\{0, 1\}`, and :math:`\text{Dom}(z)={4}`, the value :math:`3` **cannot** be removed from the domain of :math:`x_0`
+and the value :math:`5` **cannot** be removed from :math:`x_1`. However, when :math:`y` becomes fixed, say to :math:`0`, then :math:`3` is to be removed from the 
 domain of :math:`x_0` (the same is true when :math:`y` becomes fixed to :math:`1`, for the value :math:`5` and the variable :math:`x_1`).
 
 Verify that your implementation passes the tests of `Element1DVarTest.java <https://github.com/minicp/minicp/blob/master/src/test/java/minicp/engine/constraints/Element1DVarTest.java>`_.
