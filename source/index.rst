@@ -12,8 +12,6 @@ MiniCP: A lightweight Constraint Programming Solver
    :maxdepth: 2
 
    intro
-   minicp
-   about
 	
 
 
