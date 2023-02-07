@@ -22,7 +22,6 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="What is MiniCP" href="intro.html" />
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
@@ -41,9 +40,6 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="intro.html" title="What is MiniCP"
-             accesskey="N">next</a> |</li>
         <li class="nav-item nav-item-0"><a href="#">MiniCP User-Guide  documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">MiniCP: A lightweight Constraint Programming Solver</a></li> 
       </ul>
@@ -56,20 +52,72 @@
             
   <section id="minicp-a-lightweight-constraint-programming-solver">
 <h1>MiniCP: A lightweight Constraint Programming Solver<a class="headerlink" href="#minicp-a-lightweight-constraint-programming-solver" title="Permalink to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">What is MiniCP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro.html#learn-minicp-and-constraint-programming">Learn MiniCP and Constraint Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro.html#minicp-article">MiniCP Article</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro.html#javadoc-and-github-repository">Javadoc and Github Repository</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro.html#getting-help-with-minicp">Getting Help with MiniCP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro.html#who-uses-minicp">Who Uses MiniCP?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro.html#citing-minicp">Citing MiniCP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#about">About</a></li>
-</ul>
-</li>
-</ul>
+<section id="what-is-minicp">
+<h2>What is MiniCP<a class="headerlink" href="#what-is-minicp" title="Permalink to this heading">¶</a></h2>
+<p>The success of the MiniSAT solver has largely contributed to the dissemination of (CDCL) SAT solvers.
+The MiniSAT solver has a neat and minimalist architecture that is well documented.
+We believed the CP community was missing such a solver that would permit newcomers to demystify and learn the internals of CP technology.
+Therefore we developped MiniCP, a white-box bottom-up teaching framework for CP implemented in Java.
+MiniCP is voluntarily missing many features that you would find in a commercial or complete open-source solver.
+The implementation, although inspired by state-of-the-art solvers, is not focused on efficiency but rather on readability to convey the concepts as clearly as possible.
+MiniCP is small and well tested.</p>
+</section>
+<section id="learn-minicp-and-constraint-programming">
+<h2>Learn MiniCP and Constraint Programming<a class="headerlink" href="#learn-minicp-and-constraint-programming" title="Permalink to this heading">¶</a></h2>
+<p>The best way to learn MiniCP is to subscribe to our EdX MOOC
+<a class="reference external" href="https://www.edx.org/course/constraint-programming">Constraint Programming</a></p>
+<p>In this course, we will learn, using MiniCP, the basics of constraint programming: a paradigm that aims to reduce the cost of developing and solving combinatorial problems through extensive reuse of code, whose design is open-ended, but also through pruning techniques of the search space by reasoning at the level of constraints.</p>
+<p>During the proposed projects, you will extend MiniCP in functionality in order to solve more and more complex combinatorial problems, especially in scheduling and vehicle routing. You will also develop global constraints, implement search strategies, model problems, and measure the impact of modeling choices on the efficiency of the solution.</p>
+<p>Each of the 10 modules first introduces the concepts through videos, then a programming project is proposed to put these concepts into practice.</p>
+</section>
+<section id="minicp-article">
+<h2>MiniCP Article<a class="headerlink" href="#minicp-article" title="Permalink to this heading">¶</a></h2>
+<p>The complete architecture of MiniCP is described in this <a class="reference external" href="_static/mini-cp.pdf">paper</a> (<a class="reference external" href="https://doi.org/10.1007/s12532-020-00190-7">publisher PDF</a>) (<a class="reference external" href="http://user.it.uu.se/~pierref/courses/COCP/slides/delta.txt">errata and delta with current source code of MiniCP</a>).
+Please cite this paper if you use MiniCP in one of your article or if you get inspiration of it.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>@article{cite-key,
+<span class="linenos"> 2</span>        Author = {Michel, L. and Schaus, P. and Van Hentenryck, P.},
+<span class="linenos"> 3</span>        Doi = {10.1007/s12532-020-00190-7},
+<span class="linenos"> 4</span>        Id = {Michel2021},
+<span class="linenos"> 5</span>        Isbn = {1867-2957},
+<span class="linenos"> 6</span>        Journal = {Mathematical Programming Computation},
+<span class="linenos"> 7</span>        Number = {1},
+<span class="linenos"> 8</span>        Pages = {133-184},
+<span class="linenos"> 9</span>        Title = {MiniCP: a lightweight solver for constraint programming},
+<span class="linenos">10</span>        Ty = {JOUR},
+<span class="linenos">11</span>        Url = {https://doi.org/10.1007/s12532-020-00190-7},
+<span class="linenos">12</span>        Volume = {13},
+<span class="linenos">13</span>        Year = {2021}}
+</pre></div>
 </div>
+</section>
+<section id="javadoc-and-github-repository">
+<h2>Javadoc and Github Repository<a class="headerlink" href="#javadoc-and-github-repository" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://minicp.github.io/minicp/">Javadoc API</a>.</p></li>
+<li><p>The <a class="reference external" href="https://github.com/minicp/minicp">Github Repo</a>.</p></li>
+</ul>
+</section>
+<section id="getting-help-with-minicp">
+<h2>Getting Help with MiniCP<a class="headerlink" href="#getting-help-with-minicp" title="Permalink to this heading">¶</a></h2>
+<p>You’ll get the greatest chance of getting answers to your questions by using the MiniCP <a class="reference external" href="https://groups.google.com/g/mini-cp">usergroup</a>.</p>
+</section>
+<section id="who-uses-minicp">
+<h2>Who Uses MiniCP?<a class="headerlink" href="#who-uses-minicp" title="Permalink to this heading">¶</a></h2>
+<p>If you use it for teaching or for research, please let us know and we will add you in this list.</p>
+<ul class="simple">
+<li><p>EdX MOOC, <a class="reference external" href="hhttps://www.edx.org/course/constraint-programming">INGI2365</a>, teachers: Pierre Schaus, Laurent Michel, Pascal Van Hentenryck.</p></li>
+<li><p>UCLouvain, Belgium, <a class="reference external" href="https://uclouvain.be/en-cours-2022-linfo2365">INGI2365</a>, teacher: Pierre Schaus.</p></li>
+<li><p>Uppsala, Sweden, <a class="reference external" href="https://www.uu.se/en/admissions/master/selma/kursplan/?kKod=1DL442">Master in CS</a>, teacher: Pierre Flener.</p></li>
+<li><p>ACP, <a class="reference external" href="https://school.a4cp.org/summer2017/">Summer School 2017</a>, Porquerolles, France, teacher: Pierre Schaus.</p></li>
+<li><p>ACP, <a class="reference external" href="https://school.a4cp.org/summer2019/">Summer School 2019</a>, Vienna, Austria, teacher: Pierre Schaus.</p></li>
+</ul>
+<section id="about">
+<h3>About<a class="headerlink" href="#about" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference external" href="http://ash.engr.uconn.edu/~ldm/work/">Laurent Michel</a> is Professor at the University of Connecticut.</p>
+<p><a class="reference external" href="http://www.info.ucl.ac.be/~pschaus/">Pierre Schaus</a> is Professor at UCLouvain.</p>
+<p><a class="reference external" href="http://pwp.gatech.edu/pascal-van-hentenryck/">Pascal Van Hentenryck</a> is Professor at Georgia Tech.</p>
+</section>
+</section>
 </section>
 
 
@@ -83,9 +131,22 @@
               <img class="logo" src="_static/mini-cp.png" alt="Logo"/>
             </a></p>
   <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="intro.html"
-                          title="next chapter">What is MiniCP</a></p>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">MiniCP: A lightweight Constraint Programming Solver</a><ul>
+<li><a class="reference internal" href="#what-is-minicp">What is MiniCP</a></li>
+<li><a class="reference internal" href="#learn-minicp-and-constraint-programming">Learn MiniCP and Constraint Programming</a></li>
+<li><a class="reference internal" href="#minicp-article">MiniCP Article</a></li>
+<li><a class="reference internal" href="#javadoc-and-github-repository">Javadoc and Github Repository</a></li>
+<li><a class="reference internal" href="#getting-help-with-minicp">Getting Help with MiniCP</a></li>
+<li><a class="reference internal" href="#who-uses-minicp">Who Uses MiniCP?</a><ul>
+<li><a class="reference internal" href="#about">About</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -114,9 +175,6 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="intro.html" title="What is MiniCP"
-             >next</a> |</li>
         <li class="nav-item nav-item-0"><a href="#">MiniCP User-Guide  documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">MiniCP: A lightweight Constraint Programming Solver</a></li> 
       </ul>
