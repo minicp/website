@@ -2,89 +2,64 @@
 
 
 
-*******
-Preface
-*******
-
-This document is made for anyone who wants to learn
-constraint programming using MiniCP as a support.
-
-This tutorial will continuously evolve.
-Don't hesitate to give us feedback or suggestions for improvement.
-You are also welcome to report any mistake or bug.
-
 
 What is MiniCP
 ==============
+
 The success of the MiniSAT solver has largely contributed to the dissemination of (CDCL) SAT solvers.
 The MiniSAT solver has a neat and minimalist architecture that is well documented.
-We believe the CP community is currently missing such a solver that would permit newcomers to demystify the internals of CP technology. 
+We believe the CP community is currently missing such a solver that would permit newcomers to demystify and learn the internals of CP technology. 
 We introduce MiniCP, a white-box bottom-up teaching framework for CP implemented in Java. 
 MiniCP is voluntarily missing many features that you would find in a commercial or complete open-source solver. 
 The implementation, although inspired by state-of-the-art solvers, is not focused on efficiency but rather on readability to convey the concepts as clearly as possible.
 MiniCP is small and well tested.
 
 
-Javadoc
-=======
-
-The `Javadoc API <https://minicp.github.io/minicp/>`_.
+Learn MiniCP and Constraint Programming
+=======================================
 
 
-.. _install:
+The best way to learn MiniCP is to subscribe to our EdX MOOC 
+`Constraint Programming <https://www.edx.org/course/constraint-programming>`_
 
-Install MiniCP
-==============
+In this course, we will learn, using MiniCP, the basics of constraint programming: a paradigm that aims to reduce the cost of developing and solving combinatorial problems through extensive reuse of code, whose design is open-ended, but also through pruning techniques of the search space by reasoning at the level of constraints.
 
-.. raw:: html
+During the proposed projects, you will extend MiniCP in functionality in order to solve more and more complex combinatorial problems, especially in scheduling and vehicle routing. You will also develop global constraints, implement search strategies, model problems, and measure the impact of modeling choices on the efficiency of the solution.
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/VF_vkCnOp88?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
-MiniCP source code is available from github_.
-
-**Using an IDE**
-
-We recommend using IntelliJ_ or Eclipse_.
-
-From IntelliJ_ you can import the project:
-
-.. code-block:: none
-
-    Open > (select pom.xml in the minicp directory and open as new project)
+Each of the 10 modules first introduces the concepts through videos, then a programming project is proposed to put these concepts into practice.
 
 
-From Eclipse_ you can import the project:
+MiniCP Article
+===============
 
-.. code-block:: none
+The complete architecture of MiniCP is described in this `paper <_static/mini-cp.pdf>`_ (`publisher PDF <https://doi.org/10.1007/s12532-020-00190-7>`_) (`errata and delta with current source code of MiniCP <http://user.it.uu.se/~pierref/courses/COCP/slides/delta.txt>`_).
+Please cite this paper if you use MiniCP in one of your article or if you get inspiration of it.
 
-    Import > Maven > Existing Maven Projects (select minicp directory)
-
-
-**From the command line**
-
-Using maven_ command line you can do:
+.. code-block:: text
 
 
-.. code-block:: none
+        @article{cite-key,
+                Author = {Michel, L. and Schaus, P. and Van Hentenryck, P.},
+                Doi = {10.1007/s12532-020-00190-7},
+                Id = {Michel2021},
+                Isbn = {1867-2957},
+                Journal = {Mathematical Programming Computation},
+                Number = {1},
+                Pages = {133-184},
+                Title = {MiniCP: a lightweight solver for constraint programming},
+                Ty = {JOUR},
+                Url = {https://doi.org/10.1007/s12532-020-00190-7},
+                Volume = {13},
+                Year = {2021}}
 
-    $mvn compile # compile all the project
-    $mvn test    # run all the test suite
-
-Some other useful commands:
-
-.. code-block:: none
-
-    $mvn checkstyle:checktyle   # generates a report in target/site/checkstyle.html
-    $mvn findbugs:gui           # opens a gui with potential source of bugs in your code
-    $mvn jacoco:report          # creates a cover report in target/site/jacoco/index.html
-    $mvn javadoc:javadoc        # creates javadoc in target/site/apidocs/index.html
 
 
-.. _github: https://github.com/minicp/minicp
-.. _IntelliJ: https://www.jetbrains.com/idea/
-.. _Eclipse: https://www.eclipse.org
-.. _maven: https://maven.apache.org
+
+Javadoc and Github Repository
+====================================
+
+* The `Javadoc API <https://minicp.github.io/minicp/>`_.
+* The `Github Repo <https://github.com/minicp/minicp>`_.
 
 
 Getting Help with MiniCP
@@ -100,6 +75,8 @@ Who Uses MiniCP?
 
 If you use it for teaching or for research, please let us know and we will add you in this list.
 
+
+* EdX MOOC, `INGI2365 <hhttps://www.edx.org/course/constraint-programming>`_, teachers: Pierre Schaus, Laurent Michel, Pascal Van Hentenryck.
 * UCLouvain, Belgium, `INGI2365 <https://uclouvain.be/en-cours-2022-linfo2365>`_, teacher: Pierre Schaus.
 * Uppsala, Sweden, `Master in CS <https://www.uu.se/en/admissions/master/selma/kursplan/?kKod=1DL442>`_, teacher: Pierre Flener.
 * ACP, `Summer School 2017 <https://school.a4cp.org/summer2017/>`_, Porquerolles, France, teacher: Pierre Schaus.
@@ -127,6 +104,17 @@ cite the following paper (`PDF <https://doi.org/10.1007/s12532-020-00190-7>`_):
                 Url = {https://doi.org/10.1007/s12532-020-00190-7},
                 Volume = {13},
                 Year = {2021}}
+
+
+About
+*******
+
+
+`Laurent Michel <http://ash.engr.uconn.edu/~ldm/work/>`_ is Professor at the University of Connecticut.
+
+`Pierre Schaus <http://www.info.ucl.ac.be/~pschaus/>`_ is Professor at UCLouvain.
+
+`Pascal Van Hentenryck <http://pwp.gatech.edu/pascal-van-hentenryck/>`_ is Professor at Georgia Tech.
 
 
 

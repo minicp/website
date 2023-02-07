@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Preface &#8212; MiniCP User-Guide  documentation</title>
+    <title>What is MiniCP &#8212; MiniCP User-Guide  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     
@@ -22,7 +22,6 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Learn MiniCP" href="minicp.html" />
     <link rel="prev" title="MiniCP: A lightweight Constraint Programming Solver" href="index.html" />
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -43,13 +42,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="minicp.html" title="Learn MiniCP"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
           <a href="index.html" title="MiniCP: A lightweight Constraint Programming Solver"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">MiniCP User-Guide  documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Preface</a></li> 
+        <li class="nav-item nav-item-this"><a href="">What is MiniCP</a></li> 
       </ul>
     </div>  
 
@@ -58,62 +54,60 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="preface">
-<span id="intro"></span><h1>Preface<a class="headerlink" href="#preface" title="Permalink to this heading">¶</a></h1>
-<p>This document is made for anyone who wants to learn
-constraint programming using MiniCP as a support.</p>
-<p>This tutorial will continuously evolve.
-Don’t hesitate to give us feedback or suggestions for improvement.
-You are also welcome to report any mistake or bug.</p>
-<section id="what-is-minicp">
-<h2>What is MiniCP<a class="headerlink" href="#what-is-minicp" title="Permalink to this heading">¶</a></h2>
+  <section id="what-is-minicp">
+<span id="intro"></span><h1>What is MiniCP<a class="headerlink" href="#what-is-minicp" title="Permalink to this heading">¶</a></h1>
 <p>The success of the MiniSAT solver has largely contributed to the dissemination of (CDCL) SAT solvers.
 The MiniSAT solver has a neat and minimalist architecture that is well documented.
-We believe the CP community is currently missing such a solver that would permit newcomers to demystify the internals of CP technology.
+We believe the CP community is currently missing such a solver that would permit newcomers to demystify and learn the internals of CP technology.
 We introduce MiniCP, a white-box bottom-up teaching framework for CP implemented in Java.
 MiniCP is voluntarily missing many features that you would find in a commercial or complete open-source solver.
 The implementation, although inspired by state-of-the-art solvers, is not focused on efficiency but rather on readability to convey the concepts as clearly as possible.
 MiniCP is small and well tested.</p>
 </section>
-<section id="javadoc">
-<h2>Javadoc<a class="headerlink" href="#javadoc" title="Permalink to this heading">¶</a></h2>
-<p>The <a class="reference external" href="https://minicp.github.io/minicp/">Javadoc API</a>.</p>
+<section id="learn-minicp-and-constraint-programming">
+<h1>Learn MiniCP and Constraint Programming<a class="headerlink" href="#learn-minicp-and-constraint-programming" title="Permalink to this heading">¶</a></h1>
+<p>The best way to learn MiniCP is to subscribe to our EdX MOOC
+<a class="reference external" href="https://www.edx.org/course/constraint-programming">Constraint Programming</a></p>
+<p>In this course, we will learn, using MiniCP, the basics of constraint programming: a paradigm that aims to reduce the cost of developing and solving combinatorial problems through extensive reuse of code, whose design is open-ended, but also through pruning techniques of the search space by reasoning at the level of constraints.</p>
+<p>During the proposed projects, you will extend MiniCP in functionality in order to solve more and more complex combinatorial problems, especially in scheduling and vehicle routing. You will also develop global constraints, implement search strategies, model problems, and measure the impact of modeling choices on the efficiency of the solution.</p>
+<p>Each of the 10 modules first introduces the concepts through videos, then a programming project is proposed to put these concepts into practice.</p>
 </section>
-<section id="install-minicp">
-<span id="install"></span><h2>Install MiniCP<a class="headerlink" href="#install-minicp" title="Permalink to this heading">¶</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VF_vkCnOp88?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><p>MiniCP source code is available from <a class="reference external" href="https://github.com/minicp/minicp">github</a>.</p>
-<p><strong>Using an IDE</strong></p>
-<p>We recommend using <a class="reference external" href="https://www.jetbrains.com/idea/">IntelliJ</a> or <a class="reference external" href="https://www.eclipse.org">Eclipse</a>.</p>
-<p>From <a class="reference external" href="https://www.jetbrains.com/idea/">IntelliJ</a> you can import the project:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Open &gt; (select pom.xml in the minicp directory and open as new project)
+<section id="minicp-article">
+<h1>MiniCP Article<a class="headerlink" href="#minicp-article" title="Permalink to this heading">¶</a></h1>
+<p>The complete architecture of MiniCP is described in this <a class="reference external" href="_static/mini-cp.pdf">paper</a> (<a class="reference external" href="https://doi.org/10.1007/s12532-020-00190-7">publisher PDF</a>) (<a class="reference external" href="http://user.it.uu.se/~pierref/courses/COCP/slides/delta.txt">errata and delta with current source code of MiniCP</a>).
+Please cite this paper if you use MiniCP in one of your article or if you get inspiration of it.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>@article{cite-key,
+        Author = {Michel, L. and Schaus, P. and Van Hentenryck, P.},
+        Doi = {10.1007/s12532-020-00190-7},
+        Id = {Michel2021},
+        Isbn = {1867-2957},
+        Journal = {Mathematical Programming Computation},
+        Number = {1},
+        Pages = {133-184},
+        Title = {MiniCP: a lightweight solver for constraint programming},
+        Ty = {JOUR},
+        Url = {https://doi.org/10.1007/s12532-020-00190-7},
+        Volume = {13},
+        Year = {2021}}
 </pre></div>
 </div>
-<p>From <a class="reference external" href="https://www.eclipse.org">Eclipse</a> you can import the project:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Import &gt; Maven &gt; Existing Maven Projects (select minicp directory)
-</pre></div>
-</div>
-<p><strong>From the command line</strong></p>
-<p>Using <a class="reference external" href="https://maven.apache.org">maven</a> command line you can do:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$mvn compile # compile all the project
-$mvn test    # run all the test suite
-</pre></div>
-</div>
-<p>Some other useful commands:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$mvn checkstyle:checktyle   # generates a report in target/site/checkstyle.html
-$mvn findbugs:gui           # opens a gui with potential source of bugs in your code
-$mvn jacoco:report          # creates a cover report in target/site/jacoco/index.html
-$mvn javadoc:javadoc        # creates javadoc in target/site/apidocs/index.html
-</pre></div>
-</div>
+</section>
+<section id="javadoc-and-github-repository">
+<h1>Javadoc and Github Repository<a class="headerlink" href="#javadoc-and-github-repository" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://minicp.github.io/minicp/">Javadoc API</a>.</p></li>
+<li><p>The <a class="reference external" href="https://github.com/minicp/minicp">Github Repo</a>.</p></li>
+</ul>
 </section>
 <section id="getting-help-with-minicp">
-<h2>Getting Help with MiniCP<a class="headerlink" href="#getting-help-with-minicp" title="Permalink to this heading">¶</a></h2>
+<h1>Getting Help with MiniCP<a class="headerlink" href="#getting-help-with-minicp" title="Permalink to this heading">¶</a></h1>
 <p>You’ll get the greatest chance of getting answers to your questions by using the MiniCP <a class="reference external" href="https://groups.google.com/g/mini-cp">usergroup</a>.</p>
 </section>
 <section id="who-uses-minicp">
-<h2>Who Uses MiniCP?<a class="headerlink" href="#who-uses-minicp" title="Permalink to this heading">¶</a></h2>
+<h1>Who Uses MiniCP?<a class="headerlink" href="#who-uses-minicp" title="Permalink to this heading">¶</a></h1>
 <p>If you use it for teaching or for research, please let us know and we will add you in this list.</p>
 <ul class="simple">
+<li><p>EdX MOOC, <a class="reference external" href="hhttps://www.edx.org/course/constraint-programming">INGI2365</a>, teachers: Pierre Schaus, Laurent Michel, Pascal Van Hentenryck.</p></li>
 <li><p>UCLouvain, Belgium, <a class="reference external" href="https://uclouvain.be/en-cours-2022-linfo2365">INGI2365</a>, teacher: Pierre Schaus.</p></li>
 <li><p>Uppsala, Sweden, <a class="reference external" href="https://www.uu.se/en/admissions/master/selma/kursplan/?kKod=1DL442">Master in CS</a>, teacher: Pierre Flener.</p></li>
 <li><p>ACP, <a class="reference external" href="https://school.a4cp.org/summer2017/">Summer School 2017</a>, Porquerolles, France, teacher: Pierre Schaus.</p></li>
@@ -121,7 +115,7 @@ $mvn javadoc:javadoc        # creates javadoc in target/site/apidocs/index.html
 </ul>
 </section>
 <section id="citing-minicp">
-<h2>Citing MiniCP<a class="headerlink" href="#citing-minicp" title="Permalink to this heading">¶</a></h2>
+<h1>Citing MiniCP<a class="headerlink" href="#citing-minicp" title="Permalink to this heading">¶</a></h1>
 <p>If you find MiniCP useful for your research or teaching, then you can
 cite the following paper (<a class="reference external" href="https://doi.org/10.1007/s12532-020-00190-7">PDF</a>):</p>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>@article<span class="nb">{</span>cite-key,
@@ -139,6 +133,11 @@ cite the following paper (<a class="reference external" href="https://doi.org/10
         Year = <span class="nb">{</span>2021<span class="nb">}}</span>
 </pre></div>
 </div>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="http://ash.engr.uconn.edu/~ldm/work/">Laurent Michel</a> is Professor at the University of Connecticut.</p>
+<p><a class="reference external" href="http://www.info.ucl.ac.be/~pschaus/">Pierre Schaus</a> is Professor at UCLouvain.</p>
+<p><a class="reference external" href="http://pwp.gatech.edu/pascal-van-hentenryck/">Pascal Van Hentenryck</a> is Professor at Georgia Tech.</p>
 </section>
 </section>
 
@@ -155,13 +154,14 @@ cite the following paper (<a class="reference external" href="https://doi.org/10
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
     <ul>
-<li><a class="reference internal" href="#">Preface</a><ul>
-<li><a class="reference internal" href="#what-is-minicp">What is MiniCP</a></li>
-<li><a class="reference internal" href="#javadoc">Javadoc</a></li>
-<li><a class="reference internal" href="#install-minicp">Install MiniCP</a></li>
+<li><a class="reference internal" href="#">What is MiniCP</a></li>
+<li><a class="reference internal" href="#learn-minicp-and-constraint-programming">Learn MiniCP and Constraint Programming</a></li>
+<li><a class="reference internal" href="#minicp-article">MiniCP Article</a></li>
+<li><a class="reference internal" href="#javadoc-and-github-repository">Javadoc and Github Repository</a></li>
 <li><a class="reference internal" href="#getting-help-with-minicp">Getting Help with MiniCP</a></li>
 <li><a class="reference internal" href="#who-uses-minicp">Who Uses MiniCP?</a></li>
-<li><a class="reference internal" href="#citing-minicp">Citing MiniCP</a></li>
+<li><a class="reference internal" href="#citing-minicp">Citing MiniCP</a><ul>
+<li><a class="reference internal" href="#about">About</a></li>
 </ul>
 </li>
 </ul>
@@ -171,11 +171,6 @@ cite the following paper (<a class="reference external" href="https://doi.org/10
     <h4>Previous topic</h4>
     <p class="topless"><a href="index.html"
                           title="previous chapter">MiniCP: A lightweight Constraint Programming Solver</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="minicp.html"
-                          title="next chapter">Learn MiniCP</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -205,18 +200,15 @@ cite the following paper (<a class="reference external" href="https://doi.org/10
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="minicp.html" title="Learn MiniCP"
-             >next</a> |</li>
-        <li class="right" >
           <a href="index.html" title="MiniCP: A lightweight Constraint Programming Solver"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">MiniCP User-Guide  documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Preface</a></li> 
+        <li class="nav-item nav-item-this"><a href="">What is MiniCP</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, Laurent Michel, Pierre Schaus, Pascal Van Hentenryck.
+        &#169; Copyright 2023, Laurent Michel, Pierre Schaus, Pascal Van Hentenryck.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.2.
     </div>
 <div class="footer">
