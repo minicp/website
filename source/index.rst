@@ -81,9 +81,9 @@ Who Uses MiniCP?
 If you use it for teaching or for research, please let us know and we will add you in this list.
 
 
-* EdX MOOC, `INGI2365 <hhttps://www.edx.org/course/constraint-programming>`_, teachers: Pierre Schaus, Laurent Michel, Pascal Van Hentenryck.
+* EdX MOOC, `INGI2365 <https://www.edx.org/course/constraint-programming>`_, teachers: Pierre Schaus, Laurent Michel, Pascal Van Hentenryck.
 * UCLouvain, Belgium, `INGI2365 <https://uclouvain.be/en-cours-2022-linfo2365>`_, teacher: Pierre Schaus.
-* Uppsala, Sweden, `Master in CS <https://www.uu.se/en/admissions/master/selma/kursplan/?kKod=1DL442>`_, teacher: Pierre Flener.
+* Uppsala University, Sweden, `course 1DL442 <https://www.uu.se/en/admissions/freestanding-courses/course-syllabus/?kKod=1DL442>`_, teacher: Pierre Flener.
 * ACP, `Summer School 2017 <https://school.a4cp.org/summer2017/>`_, Porquerolles, France, teacher: Pierre Schaus.
 * ACP, `Summer School 2019 <https://school.a4cp.org/summer2019/>`_, Vienna, Austria, teacher: Pierre Schaus.
 
