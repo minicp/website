@@ -32,7 +32,7 @@ Each of the 10 modules first introduces the concepts through videos, then a prog
 MiniCP Article
 ===============
 
-The complete architecture of MiniCP is described in this `paper <_static/mini-cp.pdf>`_ (`publisher PDF <https://doi.org/10.1007/s12532-020-00190-7>`_) (`errata and delta with current source code of MiniCP <http://user.it.uu.se/~pierref/courses/COCP/slides/delta.txt>`_).
+The complete architecture of MiniCP is described in this `paper <_static/mini-cp.pdf>`_ (`publisher PDF <https://doi.org/10.1007/s12532-020-00190-7>`_) (`errata and delta with current source code of MiniCP <https://pierre-flener.github.io/courses/M4CO/slides/delta.txt>`_).
 Please cite this paper if you use MiniCP in one of your article or if you get inspiration of it.
 
 .. code-block:: text
