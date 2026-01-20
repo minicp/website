@@ -61,11 +61,111 @@ MiniCP is small and well tested.</p>
 </section>
 <section id="learn-minicp-and-constraint-programming">
 <h2>Learn MiniCP and Constraint Programming<a class="headerlink" href="#learn-minicp-and-constraint-programming" title="Permalink to this heading">¶</a></h2>
-<p>The best way to learn MiniCP is to subscribe to our EdX MOOC
-<a class="reference external" href="https://www.edx.org/course/constraint-programming">Constraint Programming</a></p>
+<p>There is an EdX MOOC <a class="reference external" href="https://www.edx.org/course/constraint-programming">Constraint Programming</a>
+but all the videos and programming exercises are now available freely from this page.</p>
 <p>In this course, we will learn, using MiniCP, the basics of constraint programming: a paradigm that aims to reduce the cost of developing and solving combinatorial problems through extensive reuse of code, whose design is open-ended, but also through pruning techniques of the search space by reasoning at the level of constraints.</p>
 <p>During the proposed projects, you will extend MiniCP in functionality in order to solve more and more complex combinatorial problems, especially in scheduling and vehicle routing. You will also develop global constraints, implement search strategies, model problems, and measure the impact of modeling choices on the efficiency of the solution.</p>
 <p>Each of the 10 modules first introduces the concepts through videos, then a programming project is proposed to put these concepts into practice.</p>
+<section id="exercises-and-assessment">
+<h3>Exercises and Assessment<a class="headerlink" href="#exercises-and-assessment" title="Permalink to this heading">¶</a></h3>
+<p>For each module, participants are required to complete:</p>
+<ul class="simple">
+<li><p><strong>Programming Exercises:</strong> Hands-on implementation of solver components and models in MiniCP.</p></li>
+<li><p><strong>Reasoning Exercises:</strong> Short theoretical questions and puzzles to test your understanding of the concepts.</p></li>
+</ul>
+<p>All exercises and project submissions are managed through the <strong>INGInious</strong> platform:
+<a class="reference external" href="https://inginious.org/course/mooc-cp">Access the Exercises</a></p>
+</section>
+<section id="videos">
+<h3>Videos<a class="headerlink" href="#videos" title="Permalink to this heading">¶</a></h3>
+<section id="course-trailer">
+<h4>00: Course Trailer<a class="headerlink" href="#course-trailer" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://youtu.be/bImEVjXXHJI">Trailer</a></p></li>
+<li><p><strong>Summary:</strong> A brief introductory video providing an overview of the course goals and what participants can expect to learn about Constraint Programming.</p></li>
+</ul>
+</section>
+<section id="cp-intro-and-tiny-csp">
+<h4>01: CP Intro and Tiny CSP<a class="headerlink" href="#cp-intro-and-tiny-csp" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://www.youtube.com/playlist?list=PLSvZlHG3ywyOHIk1dpZJZtpSCqSLOdRdS">Video Playlist</a></p></li>
+<li><p><strong>Slides:</strong> <a class="reference download internal" download="" href="_downloads/84eef5431ec2b7c85f71ad79ed0cdcfa/01-intro-cp.pdf"><code class="xref download docutils literal notranslate"><span class="pre">01-intro-cp.pdf</span></code></a></p></li>
+<li><p><strong>Summary:</strong> Introduces the foundations of CP using the N-Queens problem. It progresses from a basic “generate and filter” approach to early failure detection, and finally to the implementation of <strong>Tiny-CSP</strong>. Key concepts include fix-points, domains, state restoration, and declarative programming. It concludes with an introduction to the graph-coloring problem.</p></li>
+</ul>
+</section>
+<section id="mini-cp-internals">
+<h4>02: Mini-CP Internals<a class="headerlink" href="#mini-cp-internals" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://youtube.com/playlist?list=PLSvZlHG3ywyPMRL3dQqyAStRDBd2yjE3J">Video Playlist</a></p></li>
+<li><p><strong>Slides:</strong> <a class="reference download internal" download="" href="_downloads/9853b5af9156d024063767d11d55de88/02-minicp-architecture.pdf"><code class="xref download docutils literal notranslate"><span class="pre">02-minicp-architecture.pdf</span></code></a></p></li>
+<li><p><strong>Summary:</strong> Explores the “dark side” or internal architecture of a real CP solver. Topics include the implementation of efficient <strong>sparse-set</strong> domains, variable change notification, the fix-point engine, and Depth-First Search (DFS). It also covers critical state-restoration mechanisms like <strong>trailing</strong> and the StateManager.</p></li>
+</ul>
+</section>
+<section id="implementing-constraints">
+<h4>03: Implementing Constraints<a class="headerlink" href="#implementing-constraints" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://www.youtube.com/playlist?list=PLSvZlHG3ywyPBY35rNt567Db33yi_AtqH">Video Playlist</a></p></li>
+<li><p><strong>Slides:</strong> <a class="reference download internal" download="" href="_downloads/fa9f3accbc2a43496560847d550f3441/03-sum-element-constraint.pdf"><code class="xref download docutils literal notranslate"><span class="pre">03-sum-element-constraint.pdf</span></code></a></p></li>
+<li><p><strong>Summary:</strong> Focuses on the design and implementation of core constraints. It distinguishes between <strong>Domain and Bound consistency</strong> and examines specific constraints like Sum and Element (1D and 2D). Additional topics include idempotency, variable views, boolean variables, reified/logical constraints, and their application to problems like Stable Matching.</p></li>
+</ul>
+</section>
+<section id="table-constraints">
+<h4>04: Table Constraints<a class="headerlink" href="#table-constraints" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://www.youtube.com/playlist?list=PLSvZlHG3ywyNvzVeuGtNY7t_WAofh-81M">Video Playlist</a></p></li>
+<li><p><strong>Slides:</strong> <a class="reference download internal" download="" href="_downloads/c761131fd868cffa6a9a086ccce58d12/04-table-constraints.pdf"><code class="xref download docutils literal notranslate"><span class="pre">04-table-constraints.pdf</span></code></a></p></li>
+<li><p><strong>Summary:</strong> Dedicated to the <strong>Table constraint</strong>, the most flexible constraint in CP capable of modeling any relationship. The module covers practical applications like the Eternity II puzzle and automata-based modeling, as well as high-performance filtering algorithms such as <strong>STR</strong> and <strong>Compact-table</strong>.</p></li>
+</ul>
+</section>
+<section id="alldifferent-constraint">
+<h4>05: AllDifferent Constraint<a class="headerlink" href="#alldifferent-constraint" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://www.youtube.com/playlist?list=PLSvZlHG3ywyOYHEPmuK85vLMAcIGFpnuK">Video Playlist</a></p></li>
+<li><p><strong>Slides:</strong> <a class="reference download internal" download="" href="_downloads/4fac40b583935b818393e4e52b0b8f60/05-alldifferent.pdf"><code class="xref download docutils literal notranslate"><span class="pre">05-alldifferent.pdf</span></code></a></p></li>
+<li><p><strong>Summary:</strong> Analyzes one of the most famous global constraints. It covers simple decomposition methods, faster filtering heuristics, and the advanced graph-based algorithm used to achieve full <strong>Domain Consistency</strong>.</p></li>
+</ul>
+</section>
+<section id="routing-and-optimization">
+<h4>06: Routing and Optimization<a class="headerlink" href="#routing-and-optimization" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://www.youtube.com/playlist?list=PLSvZlHG3ywyO3sqSCxdCO2D6ZAHJ5z7pQ">Video Playlist</a></p></li>
+<li><p><strong>Slides:</strong> <a class="reference download internal" download="" href="_downloads/c8f821e8a8eb39f376577befbe663de7/06-circuit-optim-lns.pdf"><code class="xref download docutils literal notranslate"><span class="pre">06-circuit-optim-lns.pdf</span></code></a></p></li>
+<li><p><strong>Summary:</strong> Transitions into optimization and Vehicle Routing Problems (VRP). It details the <strong>Circuit constraint</strong>, including subtour elimination. It also introduces <strong>Large Neighborhood Search (LNS)</strong>, a powerful technique for finding high-quality solutions quickly.</p></li>
+</ul>
+</section>
+<section id="cumulative-scheduling">
+<h4>07: Cumulative Scheduling<a class="headerlink" href="#cumulative-scheduling" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://www.youtube.com/playlist?list=PLSvZlHG3ywyPx1QcTbUyQkI3_0kpTaZoA">Video Playlist</a></p></li>
+<li><p><strong>Slides:</strong> <a class="reference download internal" download="" href="_downloads/4833f8b3394bc9488425bd8b9779dceb/07-cumulative-scheduling.pdf"><code class="xref download docutils literal notranslate"><span class="pre">07-cumulative-scheduling.pdf</span></code></a></p></li>
+<li><p><strong>Summary:</strong> Explores scheduling through the <strong>Cumulative constraint</strong>. It covers feasibility checking using the sweep-line algorithm, updating activity time windows (time-table filtering), and applications in producer-consumer and packing problems.</p></li>
+</ul>
+</section>
+<section id="disjunctive-scheduling">
+<h4>08: Disjunctive Scheduling<a class="headerlink" href="#disjunctive-scheduling" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://www.youtube.com/watch?v=lShc9CiRvwM&amp;list=PLSvZlHG3ywyN7rnj_1RJyB2705v6Oydsz">Video Playlist</a></p></li>
+<li><p><strong>Slides:</strong> <a class="reference download internal" download="" href="_downloads/e0cc82572ea646e42d8173ffd95ddb5b/08-disjunctive-scheduling.pdf"><code class="xref download docutils literal notranslate"><span class="pre">08-disjunctive-scheduling.pdf</span></code></a></p></li>
+<li><p><strong>Summary:</strong> Focuses on resources with a capacity of one (disjunctive resources), as seen in the Jobshop problem. It introduces the <strong>Theta tree</strong> data structure to implement efficient filtering algorithms like Overload Checker and Not-Last.</p></li>
+</ul>
+</section>
+<section id="black-box-search">
+<h4>09: Black-box Search<a class="headerlink" href="#black-box-search" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://www.youtube.com/playlist?list=PLSvZlHG3ywyNq4GvR9ONyyOV1qHcgnVCu">Video Playlist</a></p></li>
+<li><p><strong>Slides:</strong> <a class="reference download internal" download="" href="_downloads/bb299ebcdbc40fb687161c55df4e575d/09-black-box-search.pdf"><code class="xref download docutils literal notranslate"><span class="pre">09-black-box-search.pdf</span></code></a></p></li>
+<li><p><strong>Summary:</strong> Discusses how to automate the “Search” component of CP. It covers the <strong>First-fail principle</strong>, various heuristics (Impact-based, Activity-based, Conflict-based), and search tree strategies like Discrepancy Search and Restarts.</p></li>
+</ul>
+</section>
+<section id="advanced-modeling">
+<h4>10: Advanced Modeling<a class="headerlink" href="#advanced-modeling" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Link:</strong> <a class="reference external" href="https://youtube.com/playlist?list=PLSvZlHG3ywyPfJ2Q4GCMkX8a_1mZkNU2n">Video Playlist</a></p></li>
+<li><p><strong>Slides:</strong> <a class="reference download internal" download="" href="_downloads/783a5f576d8129462d486ef4bb7a23ad/10-modeling-symmetries.pdf"><code class="xref download docutils literal notranslate"><span class="pre">10-modeling-symmetries.pdf</span></code></a></p></li>
+<li><p><strong>Summary:</strong> Covers the “art” of modeling, featuring the Bin-Packing and Steel Mill Slab problems. Topics include <strong>symmetry breaking</strong>, redundant constraints, and the <strong>watched literal</strong> technique. It also introduces modeling languages like <strong>MiniZinc</strong> and <strong>PyCSP3</strong>.</p></li>
+</ul>
+</section>
+</section>
 </section>
 <section id="minicp-article">
 <h2>MiniCP Article<a class="headerlink" href="#minicp-article" title="Permalink to this heading">¶</a></h2>
@@ -107,13 +207,11 @@ Please cite this paper if you use MiniCP in one of your article or if you get in
 <li><p>Uppsala University, Sweden, <a class="reference external" href="https://www.uu.se/en/admissions/freestanding-courses/course-syllabus/?kKod=1DL442">course 1DL442</a>, teacher: Pierre Flener.</p></li>
 <li><p>ACP, <a class="reference external" href="https://school.a4cp.org/summer2017/">Summer School 2017</a>, Porquerolles, France, teacher: Pierre Schaus.</p></li>
 <li><p>ACP, <a class="reference external" href="https://school.a4cp.org/summer2019/">Summer School 2019</a>, Vienna, Austria, teacher: Pierre Schaus.</p></li>
+<li><p>ACP, <a class="reference external" href="https://school.a4cp.org/summer2025/">Summer School 2025</a>, Cotonu, Benin, teacher: Pierre Schaus.</p></li>
 </ul>
-<section id="about">
-<h3>About<a class="headerlink" href="#about" title="Permalink to this heading">¶</a></h3>
-<p><a class="reference external" href="http://ash.engr.uconn.edu/~ldm/work/">Laurent Michel</a> is Professor at the University of Connecticut.</p>
 <p><a class="reference external" href="http://www.info.ucl.ac.be/~pschaus/">Pierre Schaus</a> is Professor at UCLouvain.</p>
+<p><a class="reference external" href="http://ash.engr.uconn.edu/~ldm/work/">Laurent Michel</a> is Professor at the University of Connecticut.</p>
 <p><a class="reference external" href="http://pwp.gatech.edu/pascal-van-hentenryck/">Pascal Van Hentenryck</a> is Professor at Georgia Tech.</p>
-</section>
 </section>
 </section>
 
@@ -132,14 +230,28 @@ Please cite this paper if you use MiniCP in one of your article or if you get in
     <ul>
 <li><a class="reference internal" href="#">MiniCP: A lightweight Constraint Programming Solver</a><ul>
 <li><a class="reference internal" href="#what-is-minicp">What is MiniCP</a></li>
-<li><a class="reference internal" href="#learn-minicp-and-constraint-programming">Learn MiniCP and Constraint Programming</a></li>
+<li><a class="reference internal" href="#learn-minicp-and-constraint-programming">Learn MiniCP and Constraint Programming</a><ul>
+<li><a class="reference internal" href="#exercises-and-assessment">Exercises and Assessment</a></li>
+<li><a class="reference internal" href="#videos">Videos</a><ul>
+<li><a class="reference internal" href="#course-trailer">00: Course Trailer</a></li>
+<li><a class="reference internal" href="#cp-intro-and-tiny-csp">01: CP Intro and Tiny CSP</a></li>
+<li><a class="reference internal" href="#mini-cp-internals">02: Mini-CP Internals</a></li>
+<li><a class="reference internal" href="#implementing-constraints">03: Implementing Constraints</a></li>
+<li><a class="reference internal" href="#table-constraints">04: Table Constraints</a></li>
+<li><a class="reference internal" href="#alldifferent-constraint">05: AllDifferent Constraint</a></li>
+<li><a class="reference internal" href="#routing-and-optimization">06: Routing and Optimization</a></li>
+<li><a class="reference internal" href="#cumulative-scheduling">07: Cumulative Scheduling</a></li>
+<li><a class="reference internal" href="#disjunctive-scheduling">08: Disjunctive Scheduling</a></li>
+<li><a class="reference internal" href="#black-box-search">09: Black-box Search</a></li>
+<li><a class="reference internal" href="#advanced-modeling">10: Advanced Modeling</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#minicp-article">MiniCP Article</a></li>
 <li><a class="reference internal" href="#javadoc-and-github-repository">Javadoc and Github Repository</a></li>
 <li><a class="reference internal" href="#getting-help-with-minicp">Getting Help with MiniCP</a></li>
-<li><a class="reference internal" href="#who-uses-minicp">Who Uses MiniCP?</a><ul>
-<li><a class="reference internal" href="#about">About</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#who-uses-minicp">Who Uses MiniCP?</a></li>
 </ul>
 </li>
 </ul>
