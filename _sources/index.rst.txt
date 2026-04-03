@@ -175,7 +175,7 @@ About
 *******
 
 
-`Pierre Schaus <http://www.info.ucl.ac.be/~pschaus/>`_ is Professor at UCLouvain.
+`Pierre Schaus <https://pschaus.github.io/index.html/>`_ is Professor at UCLouvain.
 
 `Laurent Michel <http://ash.engr.uconn.edu/~ldm/work/>`_ is Professor at the University of Connecticut.
 
