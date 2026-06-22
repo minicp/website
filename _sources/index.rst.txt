@@ -117,6 +117,13 @@ Videos
 
 
 
+Past Exams
+==========
+
+* :download:`June 2026 <_static/exams/june2026.pdf>`
+
+
+
 MiniCP Article
 ===============
 
