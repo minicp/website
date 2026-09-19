@@ -133,6 +133,10 @@ html_favicon = "_static/favicon.ico"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static/apidocs','../../target/site/apidocs/','_static/']
 
+# Paths containing extra files to copy directly to root of documentation
+html_extra_path = ['CNAME']
+
+
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
 #html_last_updated_fmt = '%b %d, %Y'
